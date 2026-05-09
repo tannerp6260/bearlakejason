@@ -1,5 +1,6 @@
 ---
 import CallButton from '@/components/common/CallButton.astro';
+import { withBasePath } from '@/utils/paths';
 ---
 <section class="bg-lake-900 py-16 text-white">
   <div class="container-narrow text-center">
@@ -8,7 +9,7 @@ import CallButton from '@/components/common/CallButton.astro';
     <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-lake-100/80">Call or text Jason for practical local guidance before you buy, sell, build, or evaluate vacation-rental considerations.</p>
     <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
       <CallButton label="Call/Text Jason" />
-      <a class="btn-secondary" href="/contact/">Ask About Bear Lake Property</a>
+      <a class="btn-secondary" href={withBasePath('/contact/')}>Ask About Bear Lake Property</a>
     </div>
   </div>
 </section>

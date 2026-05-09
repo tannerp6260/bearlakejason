@@ -34,6 +34,14 @@ Preview the built site locally:
 npm run preview
 ```
 
+## GitHub Pages deployment
+
+This MVP is also configured for GitHub Pages at `https://tannerp6260.github.io/bearlakejason/`:
+
+- `astro.config.mjs` sets `base: '/bearlakejason'` so Astro-generated assets use the repository subpath.
+- `public/.nojekyll` is intentionally committed so GitHub Pages serves Astro's `_astro/` build assets instead of filtering underscore-prefixed folders through Jekyll.
+- Internal links and public image paths are routed through `withBasePath()` so navigation, images, and icons keep working from the `/bearlakejason/` subdirectory.
+
 ## Cloudflare Pages deployment
 
 Use these settings in Cloudflare Pages:
@@ -43,7 +51,7 @@ Use these settings in Cloudflare Pages:
 - **Output directory:** `dist`
 - **Node version:** current LTS, preferably Node 20+
 
-The site is configured for `https://bearlakejason.com` in `astro.config.mjs` for sitemap and canonical URLs.
+The current MVP build is configured for the GitHub Pages repository URL in `astro.config.mjs`. Update `site` and remove or change `base` when moving to a production custom domain.
 
 ## Replacing photos, logo, and headshot
 

@@ -1,10 +1,11 @@
 ---
 import { navigation } from '@/data/navigation';
 import { site } from '@/data/site';
+import { withBasePath } from '@/utils/paths';
 ---
 <header class="sticky top-0 z-50 border-b border-lake-900/10 bg-timber-50/90 backdrop-blur">
   <nav class="container-wide flex min-h-20 items-center justify-between gap-4" aria-label="Primary navigation">
-    <a href="/" class="group flex items-center gap-3" aria-label="Jason Petersen home">
+    <a href={withBasePath('/')} class="group flex items-center gap-3" aria-label="Jason Petersen home">
       <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-lake-800 font-serif text-xl font-bold text-white">JP</span>
       <span class="leading-tight">
         <span class="block font-serif text-lg font-semibold text-lake-950">Jason Petersen</span>
@@ -13,7 +14,7 @@ import { site } from '@/data/site';
     </a>
     <div class="hidden items-center gap-7 lg:flex">
       {navigation.map((item) => (
-        <a class="text-sm font-semibold text-lake-900/75 transition hover:text-lake-950" href={item.href}>{item.label}</a>
+        <a class="text-sm font-semibold text-lake-900/75 transition hover:text-lake-950" href={withBasePath(item.href)}>{item.label}</a>
       ))}
     </div>
     <a class="hidden rounded-full bg-lake-800 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-lake-900 sm:inline-flex" href={site.phoneHref}>
@@ -22,7 +23,7 @@ import { site } from '@/data/site';
   </nav>
   <div class="container-wide flex gap-2 overflow-x-auto pb-3 lg:hidden" aria-label="Mobile navigation">
     {navigation.map((item) => (
-      <a class="shrink-0 rounded-full border border-lake-900/10 bg-white px-4 py-2 text-sm font-semibold text-lake-900" href={item.href}>{item.label}</a>
+      <a class="shrink-0 rounded-full border border-lake-900/10 bg-white px-4 py-2 text-sm font-semibold text-lake-900" href={withBasePath(item.href)}>{item.label}</a>
     ))}
   </div>
 </header>
