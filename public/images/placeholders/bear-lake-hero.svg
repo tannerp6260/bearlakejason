@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Bear Lake cabin and mountain placeholder</title>
+  <desc id="desc">A stylized lake, mountain, and cabin scene used as a placeholder.</desc>
+  <rect width="1200" height="900" fill="#effafa"/>
+  <path d="M0 520c155-70 292-74 410-12s230 67 352 15 272-61 438 0v377H0z" fill="#d7f0f0"/>
+  <path d="M0 365 210 130l185 235 145-160 210 250 166-205 284 300v350H0z" fill="#244b51"/>
+  <path d="M0 438c183-38 331-32 445 18s247 50 400 0 271-58 355-23v467H0z" fill="#2e8990" opacity=".82"/>
+  <path d="M0 605c189-34 370-31 543 9s392 34 657-18v304H0z" fill="#faf7f2"/>
+  <g transform="translate(705 492)">
+    <path d="M0 112h250v150H0z" fill="#6c3f2b"/>
+    <path d="m-28 112 153-108 153 108z" fill="#5d3829"/>
+    <rect x="32" y="147" width="58" height="86" rx="4" fill="#f2e8d9"/>
+    <rect x="126" y="145" width="78" height="54" rx="4" fill="#d7f0f0"/>
+  </g>
+  <text x="70" y="820" fill="#213f45" font-family="Arial, sans-serif" font-size="34" font-weight="700">Placeholder image — replace with real Bear Lake photography</text>
+</svg>

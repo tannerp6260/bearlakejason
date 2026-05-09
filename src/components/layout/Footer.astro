@@ -1,0 +1,28 @@
+---
+import { navigation } from '@/data/navigation';
+import { site } from '@/data/site';
+---
+<footer class="border-t border-lake-900/10 bg-lake-950 text-white">
+  <div class="container-wide grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr]">
+    <div>
+      <p class="font-serif text-2xl font-semibold">Jason Petersen</p>
+      <p class="mt-2 text-lake-100/80">{site.title} with {site.brokerage}. {site.licensed}.</p>
+      <p class="mt-4 max-w-xl text-sm leading-6 text-lake-100/70">Local Bear Lake real estate guidance for buyers, sellers, cabins, building lots, second homes, and vacation-rental-aware property conversations around Garden City, Fish Haven, Laketown, and St. Charles.</p>
+    </div>
+    <div>
+      <p class="font-semibold">Explore</p>
+      <div class="mt-4 grid gap-2">
+        {navigation.map((item) => <a class="text-sm text-lake-100/75 hover:text-white" href={item.href}>{item.label}</a>)}
+      </div>
+    </div>
+    <div>
+      <p class="font-semibold">Contact</p>
+      <a class="mt-4 block text-sm text-lake-100/75 hover:text-white" href={site.phoneHref}>{site.phone}</a>
+      <p class="mt-4 text-xs leading-5 text-lake-100/55">Equal Housing / Fair Housing language placeholder. Edit this footer once final brokerage compliance language is confirmed. License numbers intentionally omitted until provided.</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5">
+    <div class="container-wide text-xs text-lake-100/60">© {new Date().getFullYear()} Jason Petersen · {site.brokerage}. Information is for general guidance and is not a guarantee of sale price, rental income, or investment performance.</div>
+  </div>
+  <a class="fixed bottom-4 left-4 right-4 z-50 rounded-full bg-lake-800 px-5 py-3 text-center text-sm font-bold text-white shadow-soft sm:hidden" href={site.phoneHref}>Call/Text Jason: {site.phone}</a>
+</footer>

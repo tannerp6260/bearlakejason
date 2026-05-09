@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Jason Petersen headshot placeholder</title>
+  <desc id="desc">A professional portrait placeholder for Jason Petersen.</desc>
+  <rect width="900" height="1100" fill="#d7f0f0"/>
+  <circle cx="450" cy="330" r="150" fill="#244b51"/>
+  <path d="M190 945c35-230 160-355 260-355s225 125 260 355" fill="#213f45"/>
+  <rect x="95" y="85" width="710" height="930" rx="42" fill="none" stroke="#ffffff" stroke-width="20" opacity=".8"/>
+  <text x="450" y="1030" text-anchor="middle" fill="#213f45" font-family="Arial, sans-serif" font-size="34" font-weight="700">Headshot placeholder — replace before launch</text>
+</svg>
