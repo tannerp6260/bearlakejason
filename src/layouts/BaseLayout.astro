@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
 import JsonLd from '@/components/seo/JsonLd.astro';
 import { site } from '@/data/site';
+import { withBasePath } from '@/utils/paths';
 import '@/styles/global.css';
 
 const {
@@ -13,14 +14,14 @@ const {
 } = Astro.props;
 const pageTitle = title ? `${title} | Jason Petersen Bear Lake Real Estate` : 'Jason Petersen Bear Lake Real Estate';
 const canonicalUrl = new URL(canonical, site.domain).toString();
-const imageUrl = new URL(image, site.domain).toString();
+const imageUrl = new URL(withBasePath(image), site.domain).toString();
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/images/logo/bear-lake-jason-mark.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBasePath('/images/logo/bear-lake-jason-mark.svg')} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />

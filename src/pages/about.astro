@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTASection from '@/components/sections/CTASection.astro';
+import { withBasePath } from '@/utils/paths';
 ---
 <BaseLayout title="About Jason Petersen" description="Meet Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty and a local Bear Lake-area guide for Utah and Idaho real estate.">
   <section class="py-16 sm:py-24">
     <div class="container-wide grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-      <div><img class="rounded-[2rem] border border-white shadow-soft" src="/images/placeholders/jason-headshot-placeholder.svg" alt="Professional headshot placeholder for Jason Petersen" /></div>
+      <div><img class="rounded-[2rem] border border-white shadow-soft" src={withBasePath('/images/placeholders/jason-headshot-placeholder.svg')} alt="Professional headshot placeholder for Jason Petersen" /></div>
       <div>
         <p class="eyebrow">About Jason</p>
         <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Local Bear Lake guidance from Jason Petersen</h1>

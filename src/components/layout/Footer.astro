@@ -1,6 +1,7 @@
 ---
 import { navigation } from '@/data/navigation';
 import { site } from '@/data/site';
+import { withBasePath } from '@/utils/paths';
 ---
 <footer class="border-t border-lake-900/10 bg-lake-950 text-white">
   <div class="container-wide grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr]">
@@ -12,7 +13,7 @@ import { site } from '@/data/site';
     <div>
       <p class="font-semibold">Explore</p>
       <div class="mt-4 grid gap-2">
-        {navigation.map((item) => <a class="text-sm text-lake-100/75 hover:text-white" href={item.href}>{item.label}</a>)}
+        {navigation.map((item) => <a class="text-sm text-lake-100/75 hover:text-white" href={withBasePath(item.href)}>{item.label}</a>)}
       </div>
     </div>
     <div>
