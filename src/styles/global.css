@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --focus-ring: 0 0 0 3px rgba(46, 137, 144, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-timber-50 text-lake-950 antialiased;
+}
+
+::selection {
+  @apply bg-lake-200 text-lake-950;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.container-narrow {
+  @apply mx-auto max-w-5xl px-4 sm:px-6 lg:px-8;
+}
+
+.container-wide {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.eyebrow {
+  @apply text-sm font-semibold uppercase tracking-[0.18em] text-lake-700;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-lake-800 px-6 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-lake-900;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-lake-700/25 bg-white/85 px-6 py-3 text-sm font-bold text-lake-900 transition hover:border-lake-700 hover:bg-white;
+}
+
+.card {
+  @apply rounded-3xl border border-lake-900/10 bg-white p-6 shadow-sm;
+}
+
+.input {
+  @apply w-full rounded-2xl border border-lake-900/15 bg-white px-4 py-3 text-base text-lake-950 placeholder:text-lake-900/45 focus:border-lake-600;
+}
+
+.label {
+  @apply text-sm font-semibold text-lake-950;
+}

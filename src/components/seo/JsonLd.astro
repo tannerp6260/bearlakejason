@@ -1,0 +1,24 @@
+---
+import { site } from '@/data/site';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateAgent',
+  name: site.name,
+  jobTitle: site.title,
+  worksFor: {
+    '@type': 'RealEstateAgent',
+    name: site.brokerage,
+  },
+  telephone: site.phone,
+  url: site.domain,
+  areaServed: ['Bear Lake', 'Garden City UT', 'Fish Haven ID', 'Laketown UT', 'St. Charles ID'],
+  knowsAbout: [
+    'Bear Lake real estate',
+    'Bear Lake cabins',
+    'Bear Lake building lots',
+    'Bear Lake second homes',
+    'Bear Lake vacation rental property considerations',
+  ],
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

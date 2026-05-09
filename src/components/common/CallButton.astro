@@ -1,0 +1,8 @@
+---
+import { site } from '@/data/site';
+const { variant = 'primary', label = `Call/Text Jason: ${site.phone}` } = Astro.props;
+const classes = variant === 'secondary' ? 'btn-secondary' : 'btn-primary';
+---
+<a class={classes} href={site.phoneHref} aria-label={`Call or text Jason Petersen at ${site.phone}`}>
+  {label}
+</a>
