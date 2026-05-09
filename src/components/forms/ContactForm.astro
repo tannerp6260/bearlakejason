@@ -2,26 +2,40 @@
 import { site } from '@/data/site';
 const { type = 'general' } = Astro.props;
 const isSeller = type === 'seller';
+const formLabel = isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry';
 ---
-<form class="card grid gap-4" method="POST" action={site.formEndpoint} data-static-form="needs-provider-endpoint">
-  <input type="hidden" name="form_type" value={isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry'} />
-  <input type="hidden" name="send_to" value={site.emailTarget} />
-  <div class="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-950">
-    <strong>TODO:</strong> Replace the form action with a static form endpoint or Cloudflare Pages Function wired to send only to {site.emailTarget}. No API keys or secrets belong in this static code.
+{site.formsEnabled ? (
+  <form class="card grid gap-4" method="POST" action={site.formEndpoint} data-static-form={type}>
+    <input type="hidden" name="form_type" value={formLabel} />
+    <input type="hidden" name="send_to" value={site.emailTarget} />
+    <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <div class="grid gap-4 sm:grid-cols-2">
+      <label class="grid gap-2"><span class="label">Name</span><input class="input" name="name" autocomplete="name" required /></label>
+      <label class="grid gap-2"><span class="label">Phone</span><input class="input" name="phone" autocomplete="tel" required /></label>
+    </div>
+    {isSeller ? (
+      <label class="grid gap-2"><span class="label">Property address</span><input class="input" name="property_address" autocomplete="street-address" required /></label>
+    ) : (
+      <>
+        <label class="grid gap-2"><span class="label">Email</span><input class="input" type="email" name="email" autocomplete="email" /></label>
+        <label class="grid gap-2"><span class="label">What are you looking for?</span><select class="input" name="interest"><option>Buying a Bear Lake home or cabin</option><option>Selling a Bear Lake property</option><option>Buying a building lot</option><option>Vacation-rental-aware property guidance</option><option>General Bear Lake real estate question</option></select></label>
+      </>
+    )}
+    <label class="grid gap-2"><span class="label">{isSeller ? 'Notes' : 'Message'}</span><textarea class="input min-h-32" name="message" required placeholder={isSeller ? 'Tell Jason anything helpful about the property, timing, or questions.' : 'Share your timeline, preferred area, budget range, or questions.'}></textarea></label>
+    <p class="text-sm leading-6 text-lake-900/65" id={`${type}-form-help`}>Submissions are sent securely through the configured static form provider. Jason can also be reached directly by phone, text, or email.</p>
+    <button class="btn-primary w-full sm:w-auto" type="submit" aria-describedby={`${type}-form-help`}>{isSeller ? 'Request a seller valuation' : 'Send message to Jason'}</button>
+  </form>
+) : (
+  <div class="card grid gap-5" data-static-form="awaiting-provider-endpoint">
+    <div>
+      <p class="eyebrow">Direct contact</p>
+      <h3 class="mt-2 font-serif text-2xl font-semibold text-lake-950">Online form setup is the only remaining launch integration.</h3>
+      <p class="mt-3 leading-7 text-lake-900/70">Until a form provider endpoint is connected, the production-safe MVP avoids a broken web form. Call, text, or email Jason and include “{formLabel}” in your message.</p>
+    </div>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <a class="btn-primary" href={site.phoneHref}>Call {site.phone}</a>
+      <a class="btn-secondary" href={site.smsHref}>Text Jason</a>
+      <a class="btn-secondary" href={site.emailHref}>Email Jason</a>
+    </div>
   </div>
-  <div class="grid gap-4 sm:grid-cols-2">
-    <label class="grid gap-2"><span class="label">Name</span><input class="input" name="name" autocomplete="name" required /></label>
-    <label class="grid gap-2"><span class="label">Phone</span><input class="input" name="phone" autocomplete="tel" required /></label>
-  </div>
-  {isSeller ? (
-    <label class="grid gap-2"><span class="label">Property address</span><input class="input" name="property_address" autocomplete="street-address" required /></label>
-  ) : (
-    <>
-      <label class="grid gap-2"><span class="label">Email</span><input class="input" type="email" name="email" autocomplete="email" /></label>
-      <label class="grid gap-2"><span class="label">What are you looking for?</span><select class="input" name="interest"><option>Buying a Bear Lake home or cabin</option><option>Selling a Bear Lake property</option><option>Buying a building lot</option><option>Vacation-rental-aware property guidance</option><option>General Bear Lake real estate question</option></select></label>
-    </>
-  )}
-  <label class="grid gap-2"><span class="label">{isSeller ? 'Notes' : 'Message'}</span><textarea class="input min-h-32" name="message" required placeholder={isSeller ? 'Tell Jason anything helpful about the property, timing, or questions.' : 'Share your timeline, preferred area, budget range, or questions.'}></textarea></label>
-  <p class="text-sm leading-6 text-lake-900/65" id={`${type}-form-help`}>Static MVP form with browser validation. After a provider is configured, use the provider redirect or response page for success/error messaging.</p>
-  <button class="btn-primary w-full sm:w-auto" type="submit" aria-describedby={`${type}-form-help`}>{isSeller ? 'Request a seller valuation' : 'Send message to Jason'}</button>
-</form>
+)}

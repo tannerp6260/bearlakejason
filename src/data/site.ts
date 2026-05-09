@@ -1,3 +1,7 @@
+const productionDomain = 'https://bearlakejason.com';
+const emailTarget = 'huntapplication@gmail.com';
+const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT?.trim() ?? '';
+
 export const site = {
   name: 'Jason Petersen',
   title: 'Associate Broker / Sales Agent',
@@ -5,12 +9,14 @@ export const site = {
   phone: '435-757-9069',
   phoneHref: 'tel:+14357579069',
   smsHref: 'sms:+14357579069',
-  emailTarget: 'huntapplication@gmail.com',
-  domain: 'https://bearlakejason.com',
+  emailTarget,
+  emailHref: `mailto:${emailTarget}`,
+  domain: productionDomain,
   licensed: 'Licensed in Utah and Idaho',
   description:
     'Bear Lake real estate guidance from Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty.',
-  formEndpoint: 'https://example.com/replace-with-your-static-form-endpoint',
+  formEndpoint,
+  formsEnabled: formEndpoint.length > 0,
   socialImage: '/images/placeholders/bear-lake-hero.svg',
 };
 

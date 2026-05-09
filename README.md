@@ -1,6 +1,6 @@
 # Bear Lake Jason MVP Website
 
-A fast, static, mobile-first Astro website for Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty. The site is designed as a budget-friendly professional MVP for Bear Lake real estate lead generation and long-term organic SEO.
+A fast, static, mobile-first Astro website for Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty. The site is designed as a production-ready MVP for Bear Lake real estate lead generation and long-term organic SEO.
 
 ## Tech stack
 
@@ -9,11 +9,18 @@ A fast, static, mobile-first Astro website for Jason Petersen, Associate Broker 
 - Tailwind CSS
 - Static site architecture
 - Cloudflare Pages-compatible output
+- Astro sitemap generation
 
 ## Setup
 
 ```bash
 npm install
+```
+
+Optional local environment file:
+
+```bash
+cp .env.example .env
 ```
 
 ## Local development
@@ -25,6 +32,7 @@ npm run dev
 ## Production build
 
 ```bash
+npm run check
 npm run build
 ```
 
@@ -34,24 +42,34 @@ Preview the built site locally:
 npm run preview
 ```
 
-## GitHub Pages deployment
+## Production deployment
 
-This MVP is also configured for GitHub Pages at `https://tannerp6260.github.io/bearlakejason/`:
+The MVP is now configured for the production custom domain:
 
-- `astro.config.mjs` sets `base: '/bearlakejason'` so Astro-generated assets use the repository subpath.
-- `public/.nojekyll` is intentionally committed so GitHub Pages serves Astro's `_astro/` build assets instead of filtering underscore-prefixed folders through Jekyll.
-- Internal links and public image paths are routed through `withBasePath()` so navigation, images, and icons keep working from the `/bearlakejason/` subdirectory.
+```txt
+https://bearlakejason.com
+```
 
-## Cloudflare Pages deployment
-
-Use these settings in Cloudflare Pages:
+Recommended hosting is Cloudflare Pages:
 
 - **Framework preset:** Astro
 - **Build command:** `npm run build`
 - **Output directory:** `dist`
 - **Node version:** current LTS, preferably Node 20+
 
-The current MVP build is configured for the GitHub Pages repository URL in `astro.config.mjs`. Update `site` and remove or change `base` when moving to a production custom domain.
+See `DEPLOYMENT.md` for the exhaustive production hosting guide.
+
+## Forms
+
+Forms are static-host friendly and controlled by the optional environment variable:
+
+```bash
+PUBLIC_FORM_ENDPOINT=
+```
+
+If `PUBLIC_FORM_ENDPOINT` is blank, the contact areas render production-safe call/text/email CTAs instead of a broken web form. When a real static-form endpoint or Cloudflare Pages Function route is configured, the same component renders POST forms.
+
+See `CONTENT_UPDATE_GUIDE.md` for the form-integration checklist.
 
 ## Replacing photos, logo, and headshot
 
@@ -61,50 +79,22 @@ Placeholder assets are stored locally so the site does not rely on remote image 
 - `public/images/placeholders/jason-headshot-placeholder.svg` — replace with Jason's professional headshot.
 - `public/images/logo/bear-lake-jason-mark.svg` — replace with an approved logo/mark or brokerage logo if permitted.
 
-Keep the same filenames to avoid code changes, or update the relevant image paths and alt text in the Astro pages. See `public/images/README.md` for the short image checklist.
-
-## Configuring forms
-
-Forms are intentionally static-host friendly and currently use a placeholder endpoint in `src/data/site.ts`:
-
-```ts
-formEndpoint: 'https://example.com/replace-with-your-static-form-endpoint'
-```
-
-Before launch, replace this with one of the following:
-
-1. A third-party static form endpoint that sends submissions only to `huntapplication@gmail.com`.
-2. A Cloudflare Pages Function that calls an email provider API using environment variables for secrets.
-
-Do not commit API keys, email-provider secrets, or private tokens. Keep forms short and confirm any provider-level success/error redirects.
+Keep the same filenames to avoid code changes, or update the relevant image paths and alt text in the Astro pages. See `public/images/README.md` and `CONTENT_UPDATE_GUIDE.md` for the image checklist.
 
 ## Content updates
 
 Most reusable content lives in `src/data/`:
 
-- `site.ts` — business details, phone number, email target, domain, form endpoint, disclaimers.
+- `site.ts` — business details, phone number, email target, domain, form endpoint state, disclaimers.
 - `navigation.ts` — primary navigation.
 - `services.ts` — home page service cards.
 - `towns.ts` — Garden City, Fish Haven, Laketown, and St. Charles content.
-- `testimonials.ts` — development placeholders only.
 
-## Important testimonial note
+## Production MVP notes
 
-The home page includes visibly marked placeholder testimonials for layout development. Replace them with verified client testimonials or remove that section before production. Do not deploy fake testimonials as real testimonials.
-
-## Future content expansion
-
-The project structure is ready for later additions without overbuilding the MVP:
-
-- Blog/guides for Bear Lake buying, selling, building lots, and town-specific questions.
-- Town landing pages for Garden City, Fish Haven, Laketown, St. Charles, and nearby communities.
-- Featured properties or manually curated listings.
-- Future IDX/MLS integration if budget and compliance requirements justify it.
-- YouTube embeds, real testimonials, past sales, and downloadable lead magnets.
-
-## Compliance notes
-
-- Bear Lake View Realty is displayed in the footer.
+- The site no longer depends on the GitHub Pages `/bearlakejason` base path.
+- Astro sitemap generation is enabled for the production domain.
+- Fake testimonial placeholders were removed from the home page.
+- The contact form does not submit to a placeholder URL; it requires a real endpoint before rendering as a form.
 - License numbers are intentionally omitted until provided.
-- The site avoids claims like “#1 agent,” guaranteed sale price, guaranteed rental income, or guaranteed investment performance.
-- Vacation rental content includes a property-specific disclaimer and uses language such as “rental potential,” “rental considerations,” and “investment-minded buyers.”
+- Vacation-rental content avoids guaranteed income or investment-return claims.

@@ -21,6 +21,7 @@ const imageUrl = new URL(withBasePath(image), site.domain).toString();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f3d4a" />
     <link rel="icon" type="image/svg+xml" href={withBasePath('/images/logo/bear-lake-jason-mark.svg')} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
@@ -31,6 +32,9 @@ const imageUrl = new URL(withBasePath(image), site.domain).toString();
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={imageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <JsonLd />
   </head>
   <body>
