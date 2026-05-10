@@ -1,16 +1,8 @@
-# dependencies
 node_modules/
-
-# build output
-.astro/
 dist/
-
-# local environment files
+.astro/
 .env
 .env.*
-!.env.example
-
-# OS/editor noise
+*.log
+*.swp
 .DS_Store
-.vscode/
-.idea/

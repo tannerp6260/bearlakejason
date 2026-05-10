@@ -15,8 +15,7 @@ export const site = {
   licensed: 'Licensed in Utah and Idaho',
   description:
     'Bear Lake real estate guidance from Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty.',
-  formEndpoint,
-  formsEnabled: formEndpoint.length > 0,
+  formEndpoint: 'https://formspree.io/f/xlgzojyv',
   socialImage: '/images/placeholders/bear-lake-hero.svg',
 };
 
