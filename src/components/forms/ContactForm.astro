@@ -19,6 +19,6 @@ const isSeller = type === 'seller';
     </>
   )}
   <label class="grid gap-2"><span class="label">{isSeller ? 'Notes' : 'Message'}</span><textarea class="input min-h-32" name="message" required placeholder={isSeller ? 'Tell Jason anything helpful about the property, timing, or questions.' : 'Share your timeline, preferred area, budget range, or questions.'}></textarea></label>
-  <p class="text-sm leading-6 text-lake-900/65" id={`${type}-form-help`}>Static MVP form with browser validation. After a provider is configured, use the provider redirect or response page for success/error messaging.</p>
+  <p class="text-sm leading-6 text-lake-900/65" id={`${type}-form-help`}>By submitting this form, you agree that Jason Petersen or Bear Lake View Realty may contact you about your inquiry by phone, text, or email.</p>
   <button class="btn-primary w-full sm:w-auto" type="submit" aria-describedby={`${type}-form-help`}>{isSeller ? 'Request a seller valuation' : 'Send message to Jason'}</button>
 </form>
