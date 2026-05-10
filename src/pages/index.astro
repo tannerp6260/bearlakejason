@@ -5,7 +5,6 @@ import SectionHeader from '@/components/common/SectionHeader.astro';
 import CTASection from '@/components/sections/CTASection.astro';
 import { services } from '@/data/services';
 import { towns } from '@/data/towns';
-import { testimonials } from '@/data/testimonials';
 import { withBasePath } from '@/utils/paths';
 ---
 <BaseLayout title="Bear Lake Real Estate With Local Expertise" description="Jason Petersen with Bear Lake View Realty helps buyers and sellers around Bear Lake, including Garden City, Fish Haven, Laketown, and St. Charles.">
@@ -52,8 +51,12 @@ import { withBasePath } from '@/utils/paths';
 
   <section class="py-16">
     <div class="container-wide">
-      <SectionHeader eyebrow="Development placeholders" title="Future verified testimonials" text="These cards are clearly marked placeholders. Replace them with verified client testimonials before production or remove the section." />
-      <div class="mt-10 grid gap-5 md:grid-cols-2">{testimonials.map((testimonial) => <figure class="card border-dashed border-amber-400 bg-amber-50"><blockquote class="text-lg leading-8 text-amber-950">“{testimonial.quote}”</blockquote><figcaption class="mt-4 text-sm font-semibold text-amber-900">{testimonial.name} · {testimonial.context}</figcaption></figure>)}</div>
+      <SectionHeader eyebrow="What to expect" title="A simple process for Bear Lake property decisions" text="The production MVP focuses on direct contact, local context, and clear next steps instead of fake social proof or overbuilt listing tools." />
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="card"><h3 class="font-serif text-2xl font-semibold">Start with goals</h3><p class="mt-3 leading-7 text-lake-900/70">Share whether you are buying, selling, building, comparing towns, or evaluating rental-aware property questions.</p></article>
+        <article class="card"><h3 class="font-serif text-2xl font-semibold">Review local tradeoffs</h3><p class="mt-3 leading-7 text-lake-900/70">Talk through access, utilities, HOA rules, lake proximity, seasonality, Utah versus Idaho differences, and current market context.</p></article>
+        <article class="card"><h3 class="font-serif text-2xl font-semibold">Move with a plan</h3><p class="mt-3 leading-7 text-lake-900/70">Decide on next steps for showings, pricing, a seller valuation, builder conversations, or property-specific due diligence.</p></article>
+      </div>
     </div>
   </section>
   <CTASection />

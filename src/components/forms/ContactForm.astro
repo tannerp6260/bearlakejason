@@ -2,6 +2,7 @@
 import { site } from '@/data/site';
 const { type = 'general' } = Astro.props;
 const isSeller = type === 'seller';
+const formLabel = isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry';
 ---
 <form class="card grid gap-4" method="POST" action={site.formEndpoint} data-static-form="needs-provider-endpoint">
   <input type="hidden" name="form_type" value={isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry'} />
