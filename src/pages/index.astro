@@ -6,6 +6,7 @@ import CTASection from '@/components/sections/CTASection.astro';
 import { services } from '@/data/services';
 import { towns } from '@/data/towns';
 import { testimonials } from '@/data/testimonials';
+import { withBasePath } from '@/utils/paths';
 ---
 <BaseLayout title="Bear Lake Real Estate With Local Expertise" description="Jason Petersen with Bear Lake View Realty helps buyers and sellers around Bear Lake, including Garden City, Fish Haven, Laketown, and St. Charles.">
   <section class="relative overflow-hidden bg-gradient-to-br from-timber-50 via-white to-lake-100/70 py-16 sm:py-24">
@@ -14,9 +15,9 @@ import { testimonials } from '@/data/testimonials';
         <p class="eyebrow">Bear Lake real estate · Utah + Idaho</p>
         <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight text-lake-950 sm:text-6xl lg:text-7xl">Bear Lake Real Estate With Local Expertise</h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-lake-900/75">Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty, helps buyers and sellers navigate Bear Lake cabins, second homes, building lots, and investment-minded property questions with local context and responsive communication.</p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton /><a class="btn-secondary" href="/contact/">Ask About Bear Lake Property</a></div>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton /><a class="btn-secondary" href={withBasePath('/contact/')}>Ask About Bear Lake Property</a></div>
       </div>
-      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src="/images/placeholders/bear-lake-hero.svg" alt="Stylized Bear Lake mountain and cabin placeholder image" /></div>
+      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src={withBasePath('/images/placeholders/bear-lake-hero.svg')} alt="Stylized Bear Lake mountain and cabin placeholder image" /></div>
     </div>
   </section>
 
