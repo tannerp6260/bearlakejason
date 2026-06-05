@@ -4,7 +4,7 @@ const { type = 'general' } = Astro.props;
 const isSeller = type === 'seller';
 const formLabel = isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry';
 ---
-<form class="card grid gap-4" method="POST" action={site.formEndpoint} data-static-form="needs-provider-endpoint">
+<form class="card grid gap-4" method="POST" action={site.formEndpoint} aria-label={formLabel} data-static-form="needs-provider-endpoint">
   <input type="hidden" name="form_type" value={isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry'} />
   <input type="hidden" name="send_to" value={site.emailTarget} />
   <div class="grid gap-4 sm:grid-cols-2">

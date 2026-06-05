@@ -8,7 +8,7 @@ import { withBasePath } from '@/utils/paths';
     <div>
       <p class="font-serif text-2xl font-semibold">Jason Petersen</p>
       <p class="mt-2 text-lake-100/80">{site.title} with {site.brokerage}. {site.licensed}.</p>
-      <p class="mt-4 max-w-xl text-sm leading-6 text-lake-100/70">Local Bear Lake real estate guidance for buyers, sellers, cabins, building lots, second homes, and vacation-rental-aware property conversations around Garden City, Fish Haven, Laketown, and St. Charles.</p>
+      <p class="mt-4 max-w-xl text-sm leading-6 text-lake-100/70">Local Bear Lake real estate guidance for buyers, sellers, homes, cabins, condos, townhomes, lots, land, second homes, and nightly-rental-aware property conversations throughout the Utah and Idaho sides of the lake.</p>
     </div>
     <div>
       <p class="font-semibold">Explore</p>
@@ -20,11 +20,12 @@ import { withBasePath } from '@/utils/paths';
       <p class="font-semibold">Contact</p>
       <a class="mt-4 block text-sm text-lake-100/75 hover:text-white" href={site.phoneHref}>{site.phone}</a>
       <a class="mt-2 block text-sm text-lake-100/75 hover:text-white" href={site.emailHref}>{site.emailTarget}</a>
-      <p class="mt-4 text-xs leading-5 text-lake-100/55">Equal Housing Opportunity. Information should be independently verified. Add license numbers here when confirmed by brokerage compliance.</p>
+      <p class="mt-4 text-sm leading-6 text-lake-100/70">{site.brokerage}<br />{site.address}</p>
+      <p class="mt-4 text-xs leading-5 text-lake-100/55">Equal Housing Opportunity. Information is deemed reliable but not guaranteed. No rental income, investment return, or property performance is guaranteed.</p>
     </div>
   </div>
   <div class="border-t border-white/10 py-5">
-    <div class="container-wide text-xs text-lake-100/60">© {new Date().getFullYear()} Jason Petersen · {site.brokerage}. Information is for general guidance and is not a guarantee of sale price, rental income, or investment performance.</div>
+    <div class="container-wide text-xs text-lake-100/60">© {new Date().getFullYear()} Jason Petersen · {site.brokerage}. Information is for general guidance and is not a guarantee of sale price, rental income, investment return, or property performance.</div>
   </div>
   <a class="fixed bottom-4 left-4 right-4 z-50 rounded-full bg-lake-800 px-5 py-3 text-center text-sm font-bold text-white shadow-soft sm:hidden" href={site.phoneHref}>Call/Text Jason: {site.phone}</a>
 </footer>

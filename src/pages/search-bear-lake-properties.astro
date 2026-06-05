@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CallButton from '@/components/common/CallButton.astro';
+import CTASection from '@/components/sections/CTASection.astro';
+import { site, rentalDisclaimer } from '@/data/site';
+---
+<BaseLayout title="Search Bear Lake Properties" description="Contact Jason Petersen to find current Bear Lake homes, cabins, condos, townhomes, lots, land, second homes, and nightly-rental-aware properties.">
+  <section class="py-16 sm:py-24">
+    <div class="container-narrow">
+      <p class="eyebrow">Property search</p>
+      <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Search Bear Lake Properties</h1>
+      <p class="mt-6 text-lg leading-8 text-lake-900/75">Live property search is coming later after the appropriate MLS, brokerage, or approved search setup is confirmed. For now, Jason can help you find current Bear Lake homes, cabins, condos, townhomes, lots, land, second homes, and nightly-rental-aware properties on both the Utah and Idaho sides of the lake.</p>
+      <p class="mt-5 text-lg leading-8 text-lake-900/75">Call or text Jason at {site.phone} for current property options.</p>
+      <div class="mt-8"><CallButton label="Call or text Jason for current property options" /></div>
+    </div>
+  </section>
+  <section class="bg-white py-16">
+    <div class="container-wide grid gap-5 md:grid-cols-3">
+      <article class="card"><h2 class="font-serif text-2xl font-semibold">Tell Jason what you want</h2><p class="mt-3 leading-7 text-lake-900/70">Share your timing, budget range, desired property type, location preferences, and whether you are comparing the Utah or Idaho side of Bear Lake.</p></article>
+      <article class="card"><h2 class="font-serif text-2xl font-semibold">Review current options</h2><p class="mt-3 leading-7 text-lake-900/70">Jason can help you review current homes, cabins, condos, townhomes, lots, land, and second-home options without relying on stale search results.</p></article>
+      <article class="card"><h2 class="font-serif text-2xl font-semibold">Ask rental-aware questions</h2><p class="mt-3 leading-7 text-lake-900/70">Discuss local rules, HOA restrictions, parking, sleeping capacity, guest usability, and property-specific considerations without assuming guaranteed income.</p></article>
+    </div>
+  </section>
+  <section class="py-16"><div class="container-narrow rounded-[2rem] border border-lake-900/10 bg-lake-50 p-8"><h2 class="font-serif text-3xl font-semibold">Important rental and investment note</h2><p class="mt-4 text-lg leading-8 text-lake-900/75">{rentalDisclaimer}</p></div></section>
+  <CTASection />
+</BaseLayout>

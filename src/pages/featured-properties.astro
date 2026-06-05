@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CallButton from '@/components/common/CallButton.astro';
+import CTASection from '@/components/sections/CTASection.astro';
+import { site } from '@/data/site';
+import { withBasePath } from '@/utils/paths';
+---
+<BaseLayout title="Featured Bear Lake Properties" description="Contact Jason Petersen for current Bear Lake listings, featured properties, off-market opportunities, and local property guidance.">
+  <section class="py-16 sm:py-24">
+    <div class="container-narrow">
+      <p class="eyebrow">Featured properties</p>
+      <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Featured Bear Lake Properties</h1>
+      <p class="mt-6 text-lg leading-8 text-lake-900/75">For Jason’s current Bear Lake listings, featured properties, off-market opportunities, and local property guidance, call or text Jason directly at {site.phone}.</p>
+      <p class="mt-5 leading-8 text-lake-900/75">Jason can help with homes, cabins, condos, townhomes, lots, land, second homes, and investment-minded properties throughout the Bear Lake area.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton label="Call or Text Jason" /><a class="btn-secondary" href={withBasePath('/contact/')}>Contact Jason</a></div>
+    </div>
+  </section>
+  <section class="bg-white py-16">
+    <div class="container-wide grid gap-5 md:grid-cols-3">
+      <article class="card"><h2 class="font-serif text-2xl font-semibold">No invented listings</h2><p class="mt-3 leading-7 text-lake-900/70">This page does not display sample listings or fake inventory. Jason can share current property options directly based on your goals.</p></article>
+      <article class="card"><h2 class="font-serif text-2xl font-semibold">Buyer guidance</h2><p class="mt-3 leading-7 text-lake-900/70">Compare Utah and Idaho side options, lake access, neighborhoods, HOAs, utilities, access, and property-specific tradeoffs.</p></article>
+      <article class="card"><h2 class="font-serif text-2xl font-semibold">Seller conversations</h2><p class="mt-3 leading-7 text-lake-900/70">Ask about valuation, pricing, photography, drone footage, property prep, brochures, and a practical plan for your Bear Lake property.</p></article>
+    </div>
+  </section>
+  <CTASection />
+</BaseLayout>

@@ -1,26 +1,26 @@
 export const towns = [
   {
-    name: 'Garden City',
-    term: 'Garden City real estate',
+    name: 'Garden City, Harbor Village, Sweetwater, and Pickleville',
+    term: 'Garden City area real estate',
     description:
-      'A popular Utah-side hub for Bear Lake second homes, cabins, short-term-rental-aware buyers, restaurants, marinas, and year-round recreation access.',
+      'Utah-side Bear Lake communities and neighborhoods with second homes, cabins, condos, townhomes, lots, marinas, restaurants, lake access, and year-round recreation considerations.',
   },
   {
-    name: 'Fish Haven',
-    term: 'Fish Haven real estate',
+    name: 'Laketown, Woodruff, and Rich County',
+    term: 'Rich County real estate',
     description:
-      'An Idaho-side Bear Lake community with lake views, cabin neighborhoods, building lots, and a quieter feel north of the Utah border.',
+      'South-end and broader Rich County areas where acreage, lots, land, access, utilities, rural setting, and local market context can matter as much as bedroom count or square footage.',
   },
   {
-    name: 'Laketown',
-    term: 'Laketown real estate',
+    name: 'Fish Haven, Bear Lake West, and St. Charles',
+    term: 'Idaho-side Bear Lake real estate',
     description:
-      'A south-end Bear Lake area where acreage, lots, lake access, and a rural pace can matter as much as bedroom count or square footage.',
+      'Idaho-side Bear Lake communities with lake views, cabin neighborhoods, building lots, golf-course and hillside areas, and a different mix of rules, access, and ownership considerations.',
   },
   {
-    name: 'St. Charles',
-    term: 'St. Charles real estate',
+    name: 'Paris, Bloomington, Dingle, and Bear Lake County',
+    term: 'Bear Lake County real estate',
     description:
-      'An Idaho-side option for buyers comparing value, setting, access, local rules, and proximity to Bear Lake recreation.',
+      'Bear Lake County options for buyers and sellers comparing small-town living, land, second homes, travel patterns, and proximity to Bear Lake recreation.',
   },
 ];

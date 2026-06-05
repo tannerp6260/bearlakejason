@@ -5,57 +5,58 @@ import SectionHeader from '@/components/common/SectionHeader.astro';
 import CTASection from '@/components/sections/CTASection.astro';
 import { services } from '@/data/services';
 import { towns } from '@/data/towns';
+import { site } from '@/data/site';
 import { withBasePath } from '@/utils/paths';
 ---
-<BaseLayout title="Bear Lake Real Estate With Local Expertise" description="Jason Petersen with Bear Lake View Realty helps buyers and sellers around Bear Lake, including Garden City, Fish Haven, Laketown, and St. Charles.">
+<BaseLayout title="Bear Lake Real Estate With Local Expertise" description="Jason Petersen helps buyers and sellers with Bear Lake homes, cabins, condos, townhomes, lots, land, second homes, and investment-minded properties on the Utah and Idaho sides of the lake.">
   <section class="relative overflow-hidden bg-gradient-to-br from-timber-50 via-white to-lake-100/70 py-16 sm:py-24">
     <div class="container-wide grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
       <div>
         <p class="eyebrow">Bear Lake real estate · Utah + Idaho</p>
         <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight text-lake-950 sm:text-6xl lg:text-7xl">Bear Lake Real Estate With Local Expertise</h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-lake-900/75">Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty, helps buyers and sellers navigate Bear Lake cabins, second homes, building lots, and investment-minded property questions with local context and responsive communication.</p>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-lake-900/75">Jason Petersen, {site.title} with Bear Lake View Realty, helps buyers and sellers throughout the Bear Lake area with homes, second homes, cabins, condos, townhomes, lots, land, nightly-rental considerations, and investment-minded properties on both the Utah and Idaho sides of the lake.</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton /><a class="btn-secondary" href={withBasePath('/contact/')}>Ask About Bear Lake Property</a></div>
       </div>
-      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src={withBasePath('/images/placeholders/bear-lake-hero.svg')} alt="Stylized Bear Lake mountain and cabin placeholder image" /></div>
+      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src={withBasePath('/images/placeholders/bear-lake-hero.svg')} alt="Bear Lake mountain and cabin scene representing local real estate guidance" /></div>
     </div>
   </section>
 
   <section class="py-16">
     <div class="container-wide grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {['25+ years living in the area', 'Utah + Idaho Bear Lake guidance', 'Fast calls, texts, and follow-through', 'Builder and local referral network'].map((item) => <div class="card"><p class="font-serif text-xl font-semibold text-lake-950">{item}</p></div>)}
+      {['About 25 years living in the area', 'Utah + Idaho Bear Lake guidance', 'Fast calls, texts, and follow-through', 'Lots, land, and local market guidance'].map((item) => <div class="card"><p class="font-serif text-xl font-semibold text-lake-950">{item}</p></div>)}
     </div>
   </section>
 
   <section class="py-16 bg-white">
     <div class="container-wide">
-      <SectionHeader eyebrow="How Jason helps" title="Practical help for Bear Lake buyers and sellers" text="A scalable MVP service overview focused on the questions people actually have before they make a Bear Lake real estate decision." />
+      <SectionHeader eyebrow="How Jason helps" title="Practical help for Bear Lake buyers and sellers" text="Clear local guidance for the questions people actually have before they buy, sell, build, compare communities, or evaluate nightly-rental-aware Bear Lake properties." />
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">{services.map((service) => <article class="card"><h3 class="font-serif text-2xl font-semibold">{service.title}</h3><p class="mt-3 leading-7 text-lake-900/70">{service.description}</p></article>)}</div>
     </div>
   </section>
 
   <section class="py-16">
     <div class="container-wide">
-      <SectionHeader eyebrow="Local focus" title="Garden City, Fish Haven, Laketown, and St. Charles real estate" text="Bear Lake is not one-size-fits-all. Jason helps compare local differences across the Utah and Idaho sides of the lake." />
+      <SectionHeader eyebrow="Local focus" title="Service across the broader Bear Lake market" text="Jason helps clients compare property types, access, rules, seasonality, and community differences across Garden City, Laketown, Fish Haven, St. Charles, Bear Lake West, Harbor Village, Sweetwater, Pickleville, Paris, Bloomington, Dingle, Rich County, Bear Lake County, and both the Utah and Idaho sides of Bear Lake." />
       <div class="mt-10 grid gap-5 md:grid-cols-2">{towns.map((town) => <article class="card"><p class="eyebrow">{town.term}</p><h3 class="mt-2 font-serif text-2xl font-semibold">{town.name}</h3><p class="mt-3 leading-7 text-lake-900/70">{town.description}</p></article>)}</div>
     </div>
   </section>
 
   <section class="bg-lake-50 py-16">
     <div class="container-narrow rounded-[2rem] bg-white p-8 text-center shadow-soft">
-      <p class="eyebrow">Current listings</p>
-      <h2 class="mt-3 font-serif text-3xl font-semibold">No live listings feed yet — contact Jason directly</h2>
-      <p class="mx-auto mt-4 max-w-2xl leading-7 text-lake-900/70">For current Bear Lake listings, local opportunities, and property-specific guidance, contact Jason directly. This MVP intentionally avoids IDX or live MLS feeds until a future phase.</p>
-      <div class="mt-7"><CallButton label="Call/Text for current Bear Lake listings" /></div>
+      <p class="eyebrow">Featured properties</p>
+      <h2 class="mt-3 font-serif text-3xl font-semibold">Ask Jason about current Bear Lake property options</h2>
+      <p class="mx-auto mt-4 max-w-2xl leading-7 text-lake-900/70">For Jason’s current Bear Lake listings, featured properties, off-market opportunities, and local property guidance, call or text Jason directly at {site.phone}. Live listing search is not displayed here until the appropriate MLS, brokerage, or approved search setup is confirmed.</p>
+      <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row"><CallButton label="Call/Text for current options" /><a class="btn-secondary" href={withBasePath('/featured-properties/')}>Featured Properties</a></div>
     </div>
   </section>
 
   <section class="py-16">
     <div class="container-wide">
-      <SectionHeader eyebrow="What to expect" title="A simple process for Bear Lake property decisions" text="The production MVP focuses on direct contact, local context, and clear next steps instead of fake social proof or overbuilt listing tools." />
+      <SectionHeader eyebrow="What to expect" title="A simple process for Bear Lake property decisions" text="Start with a direct conversation, review practical local context, and decide on clear next steps without pressure or exaggerated promises." />
       <div class="mt-10 grid gap-5 md:grid-cols-3">
         <article class="card"><h3 class="font-serif text-2xl font-semibold">Start with goals</h3><p class="mt-3 leading-7 text-lake-900/70">Share whether you are buying, selling, building, comparing towns, or evaluating rental-aware property questions.</p></article>
-        <article class="card"><h3 class="font-serif text-2xl font-semibold">Review local tradeoffs</h3><p class="mt-3 leading-7 text-lake-900/70">Talk through access, utilities, HOA rules, lake proximity, seasonality, Utah versus Idaho differences, and current market context.</p></article>
-        <article class="card"><h3 class="font-serif text-2xl font-semibold">Move with a plan</h3><p class="mt-3 leading-7 text-lake-900/70">Decide on next steps for showings, pricing, a seller valuation, builder conversations, or property-specific due diligence.</p></article>
+        <article class="card"><h3 class="font-serif text-2xl font-semibold">Review local tradeoffs</h3><p class="mt-3 leading-7 text-lake-900/70">Talk through access, utilities, HOA rules, lake proximity, seasonality, Utah versus Idaho differences, pricing, property prep, and current market context.</p></article>
+        <article class="card"><h3 class="font-serif text-2xl font-semibold">Move with a plan</h3><p class="mt-3 leading-7 text-lake-900/70">Decide on next steps for showings, pricing, a seller valuation, land due diligence, photography and marketing prep, or property-specific rental considerations.</p></article>
       </div>
     </div>
   </section>
