@@ -65,16 +65,16 @@ Forms are static-host friendly and currently post to the configured static form 
 
 See `CONTENT_UPDATE_GUIDE.md` for the form-integration checklist.
 
-## Replacing photos, logo, and headshot
+## Image assets
 
-Placeholder assets are stored locally so the site does not rely on remote image URLs:
+The site now uses finalized local image assets instead of placeholder artwork:
 
-- `public/images/placeholders/bear-lake-hero.svg` — replace with an optimized Bear Lake hero photo.
-- `public/images/placeholders/jason-headshot-placeholder.svg` — replace with Jason's professional headshot.
-- `public/images/placeholders/bear-lake-view-realty-logo-placeholder.svg` — replace with the approved Bear Lake View Realty brokerage logo when available.
-- `public/images/logo/bear-lake-jason-mark.svg` — replace with an approved site mark if desired.
+- `public/images/scenery/bearlake_sunset.jpeg` — Bear Lake hero and social-sharing image.
+- `public/images/headshots/jp_headshot.png` — Jason Petersen professional headshot.
+- `public/images/logo/bearlakeviewrealty_logo.png` — Bear Lake View Realty brokerage logo.
+- `public/images/logo/bear-lake-jason-mark.svg` — compact site mark/favicon.
 
-Keep the same filenames to avoid code changes, or update the relevant image paths and alt text in the Astro pages. See `public/images/README.md` and `CONTENT_UPDATE_GUIDE.md` for the image checklist.
+When replacing these assets later, keep filenames stable or update the relevant image paths and alt text in the Astro pages. See `public/images/README.md` and `CONTENT_UPDATE_GUIDE.md` for the image checklist.
 
 ## Content updates
 

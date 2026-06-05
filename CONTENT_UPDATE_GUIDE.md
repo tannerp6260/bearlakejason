@@ -41,16 +41,14 @@ To enable forms:
 
 Do not commit form-provider API secrets to the repo.
 
-## 3. Replace temporary imagery
+## 3. Maintain production imagery
 
-Temporary image files are in `public/images/placeholders/`.
+Current production image files are in `public/images/`:
 
-Replace these before final marketing launch:
-
-- `public/images/placeholders/bear-lake-hero.svg` — use a real Bear Lake hero image.
-- `public/images/placeholders/jason-headshot-placeholder.svg` — use Jason's professional headshot.
-- `public/images/placeholders/bear-lake-view-realty-logo-placeholder.svg` — use the approved Bear Lake View Realty brokerage logo when available.
-- `public/images/logo/bear-lake-jason-mark.svg` — use an approved site mark/logo if desired.
+- `public/images/scenery/bearlake_sunset.jpeg` — Bear Lake hero and social-sharing image.
+- `public/images/headshots/jp_headshot.png` — Jason's professional headshot.
+- `public/images/logo/bearlakeviewrealty_logo.png` — Bear Lake View Realty brokerage logo.
+- `public/images/logo/bear-lake-jason-mark.svg` — compact site mark/logo if desired.
 
 Best practices:
 
@@ -66,6 +64,7 @@ When images change, update alt text in:
 
 - `src/pages/index.astro`
 - `src/pages/about.astro`
+- `src/components/layout/Footer.astro` and `src/data/site.ts` for brokerage logo references
 - any future page or component that references the new asset
 
 Alt text should describe the image plainly. Do not stuff keywords.
@@ -142,7 +141,7 @@ For each page, review:
 - Canonical URL.
 - Social image.
 
-The current social image is the temporary hero artwork. Replace it with a real, polished image before actively sharing the site.
+The current social image is `public/images/scenery/bearlake_sunset.jpeg`; replace it with a newer polished Bear Lake image if the homepage hero changes.
 
 ## 11. Future content expansion ideas
 

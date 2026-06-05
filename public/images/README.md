@@ -1,12 +1,10 @@
-# Image replacement guide
+# Image assets
 
-Temporary image files live in `public/images/placeholders/` and the site mark lives in `public/images/logo/`.
+Current production image files:
 
-Replace with optimized local files when final assets are available:
+- `scenery/bearlake_sunset.jpeg`: Bear Lake hero and social-sharing image.
+- `headshots/jp_headshot.png`: Jason Petersen professional headshot.
+- `logo/bearlakeviewrealty_logo.png`: Bear Lake View Realty brokerage logo.
+- `logo/bear-lake-jason-mark.svg`: compact site mark/favicon.
 
-- `placeholders/bear-lake-hero.svg`: real Bear Lake lake/mountain/cabin hero photo.
-- `placeholders/jason-headshot-placeholder.svg`: Jason Petersen professional headshot.
-- `placeholders/bear-lake-view-realty-logo-placeholder.svg`: approved Bear Lake View Realty brokerage logo.
-- `logo/bear-lake-jason-mark.svg`: approved Jason/Bear Lake site mark if desired.
-
-Keep filenames stable if you want to avoid code edits, or update image paths and alt text in the Astro pages/components.
+The `placeholders/` directory is retained as fallback/reference artwork, but active pages should point at the production assets above. Keep filenames stable to avoid code edits, or update image paths and alt text in the Astro pages/components.
