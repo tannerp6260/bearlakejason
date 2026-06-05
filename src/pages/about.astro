@@ -6,19 +6,23 @@ import { withBasePath } from '@/utils/paths';
 <BaseLayout title="About Jason Petersen" description="Meet Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty and a local Bear Lake-area guide for Utah and Idaho real estate.">
   <section class="py-16 sm:py-24">
     <div class="container-wide grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-      <div class="flex items-center justify-center">
+      <div class="flex flex-col items-center justify-center">
         <img
           class="mx-auto w-full max-w-md rounded-[2rem] border border-white shadow-soft"
           src={withBasePath('/images/headshots/jp_headshot.png')}
           alt="Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty"
         />
+        <div class="mt-4 text-center leading-tight">
+          <p class="font-serif text-2xl font-semibold text-lake-950">Bear Lake View Realty</p>
+          <p class="mt-1 text-sm font-semibold uppercase tracking-[0.18em] text-lake-800">Licensed in Utah &amp; Idaho</p>
+        </div>
       </div>
       <div>
         <p class="eyebrow">About Jason</p>
-        <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Local Bear Lake guidance from Jason Petersen</h1>
-        <p class="mt-6 text-lg leading-8 text-lake-900/75">Jason Petersen is a Utah and Idaho licensed REALTOR® / Associate Broker with Bear Lake View Realty. He has lived in Rich County for about 25 years, raised his family in the Bear Lake area, and has first-hand knowledge of communities throughout the region, including Garden City, Woodruff, Rich County, Bear Lake County, and both the Utah and Idaho sides of Bear Lake.</p>
+        <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Local Bear Lake guidance from your resident expert</h1>
+        <p class="mt-6 text-lg leading-8 text-lake-900/75">Jason Petersen is a Utah and Idaho licensed REALTOR® / Associate Broker with Bear Lake View Realty. He has lived in Rich County for about 25 years, raised his family in the Bear Lake area, and has first-hand knowledge of communities throughout the region, including Garden City, Woodruff, Rich County, Bear Lake County, and Utah and Idaho Bear Lake communities.</p>
         <div class="mt-8 grid gap-4 sm:grid-cols-2">
-          {['25+ years in the area', 'Fast communication and follow-through', 'Utah and Idaho side insight', 'Builder connections for lot buyers'].map((item) => <div class="card"><h2 class="font-serif text-xl font-semibold">{item}</h2></div>)}
+          {['25+ years in the area', 'Fast communication and follow-through', 'Utah and Idaho market insight', 'Builder and local referral network'].map((item) => <div class="card"><h2 class="font-serif text-xl font-semibold">{item}</h2></div>)}
         </div>
       </div>
     </div>

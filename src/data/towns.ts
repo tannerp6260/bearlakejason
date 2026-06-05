@@ -3,13 +3,13 @@ export const towns = [
     name: 'Garden City',
     term: 'Garden City real estate',
     description:
-      'A popular Utah-side hub for Bear Lake second homes, cabins, short-term-rental-aware buyers, restaurants, marinas, and year-round recreation access.',
+      'A popular Utah hub for Bear Lake second homes, cabins, short-term-rental-aware buyers, restaurants, marinas, and year-round recreation access.',
   },
   {
     name: 'Fish Haven',
     term: 'Fish Haven real estate',
     description:
-      'An Idaho-side Bear Lake community with lake views, cabin neighborhoods, building lots, and a quieter feel north of the Utah border.',
+      'An Idaho Bear Lake community with lake views, cabin neighborhoods, building lots, and a quieter feel north of the Utah border.',
   },
   {
     name: 'Laketown',
@@ -21,6 +21,6 @@ export const towns = [
     name: 'St. Charles',
     term: 'St. Charles real estate',
     description:
-      'An Idaho-side option for buyers comparing value, setting, access, local rules, and proximity to Bear Lake recreation.',
+      'An Idaho option for buyers comparing value, setting, access, local rules, and proximity to Bear Lake recreation.',
   },
 ];
