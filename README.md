@@ -1,6 +1,6 @@
-# Bear Lake Jason MVP Website
+# Bear Lake Jason Website
 
-A fast, static, mobile-first Astro website for Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty. The site is designed as a production-ready MVP for Bear Lake real estate lead generation and long-term organic SEO.
+A fast, static, mobile-first Astro website for Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty. The site is designed for Bear Lake real estate lead generation and long-term organic SEO.
 
 ## Tech stack
 
@@ -44,7 +44,7 @@ npm run preview
 
 ## Production deployment
 
-The MVP is now configured for the production custom domain:
+The site is configured for the production custom domain:
 
 ```txt
 https://bearlakejason.com
@@ -61,13 +61,7 @@ See `DEPLOYMENT.md` for the exhaustive production hosting guide.
 
 ## Forms
 
-Forms are static-host friendly and controlled by the optional environment variable:
-
-```bash
-PUBLIC_FORM_ENDPOINT=
-```
-
-If `PUBLIC_FORM_ENDPOINT` is blank, the contact areas render production-safe call/text/email CTAs instead of a broken web form. When a real static-form endpoint or Cloudflare Pages Function route is configured, the same component renders POST forms.
+Forms are static-host friendly and currently post to the configured static form endpoint in `src/data/site.ts`. Confirm the endpoint and notification inbox before launch.
 
 See `CONTENT_UPDATE_GUIDE.md` for the form-integration checklist.
 
@@ -77,7 +71,8 @@ Placeholder assets are stored locally so the site does not rely on remote image 
 
 - `public/images/placeholders/bear-lake-hero.svg` — replace with an optimized Bear Lake hero photo.
 - `public/images/placeholders/jason-headshot-placeholder.svg` — replace with Jason's professional headshot.
-- `public/images/logo/bear-lake-jason-mark.svg` — replace with an approved logo/mark or brokerage logo if permitted.
+- `public/images/placeholders/bear-lake-view-realty-logo-placeholder.svg` — replace with the approved Bear Lake View Realty brokerage logo when available.
+- `public/images/logo/bear-lake-jason-mark.svg` — replace with an approved site mark if desired.
 
 Keep the same filenames to avoid code changes, or update the relevant image paths and alt text in the Astro pages. See `public/images/README.md` and `CONTENT_UPDATE_GUIDE.md` for the image checklist.
 
@@ -90,11 +85,11 @@ Most reusable content lives in `src/data/`:
 - `services.ts` — home page service cards.
 - `towns.ts` — Garden City, Fish Haven, Laketown, and St. Charles content.
 
-## Production MVP notes
+## Production notes
 
 - The site no longer depends on the GitHub Pages `/bearlakejason` base path.
 - Astro sitemap generation is enabled for the production domain.
-- Fake testimonial placeholders were removed from the home page.
-- The contact form does not submit to a placeholder URL; it requires a real endpoint before rendering as a form.
+- Testimonials and ratings are not displayed until real, approved source material is available.
+- Contact forms should be tested against the configured endpoint before launch.
 - License numbers are intentionally omitted until provided.
-- Vacation-rental content avoids guaranteed income or investment-return claims.
+- Rental-aware content avoids rental-income, occupancy, resale-value, and investment-performance promises.

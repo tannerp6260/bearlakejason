@@ -4,7 +4,7 @@ This project is a static Astro website. The simplest production-grade hosting pa
 
 ## 1. Production architecture
 
-Recommended MVP architecture:
+Recommended production architecture:
 
 - **Repository:** GitHub repo connected to Cloudflare Pages.
 - **Host/CDN:** Cloudflare Pages.
