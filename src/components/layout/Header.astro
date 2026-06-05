@@ -6,7 +6,13 @@ import { withBasePath } from '@/utils/paths';
 <header class="sticky top-0 z-50 border-b border-lake-900/10 bg-timber-50/90 backdrop-blur">
   <nav class="container-wide flex min-h-20 items-center justify-between gap-4" aria-label="Primary navigation">
     <a href={withBasePath('/')} class="group flex items-center gap-3" aria-label="Jason Petersen home">
-      <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-lake-800 font-serif text-xl font-bold text-white">JP</span>
+      <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-lake-900/10 bg-white shadow-sm">
+        <img
+          class="max-h-full max-w-full object-contain object-center"
+          src={withBasePath('/images/headshots/jp_headshot.png')}
+          alt="Jason Petersen headshot"
+        />
+      </span>
       <span class="leading-tight">
         <span class="block font-serif text-lg font-semibold text-lake-950">Jason Petersen</span>
         <span class="block text-xs font-semibold uppercase tracking-wide text-lake-800">Bear Lake View Realty</span>

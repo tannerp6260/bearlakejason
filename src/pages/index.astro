@@ -16,7 +16,17 @@ import { withBasePath } from '@/utils/paths';
         <p class="mt-6 max-w-2xl text-lg leading-8 text-lake-900/75">Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty, helps buyers and sellers navigate Bear Lake homes, cabins, second homes, condos, townhomes, building lots, and investment-minded property questions with local context and responsive communication.</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton /><a class="btn-secondary" href={withBasePath('/contact/')}>Ask About Bear Lake Property</a></div>
       </div>
-      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src={withBasePath('/images/placeholders/bear-lake-hero.svg')} alt="Stylized Bear Lake mountain and cabin scene" /></div>
+      <div class="relative flex items-center justify-center">
+        <div class="relative min-h-[22rem] w-full overflow-hidden rounded-[2rem] border border-white/80 shadow-soft sm:min-h-[28rem] lg:min-h-[34rem]">
+          <img
+            class="absolute inset-0 h-full w-full object-cover object-center"
+            src={withBasePath('/images/scenery/bearlake_sunset2.jpeg')}
+            alt="Bear Lake sunset over the water and mountains"
+            onerror={`this.onerror=null;this.src='${withBasePath('/images/scenery/bearlake_sunset.jpeg')}'`}
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-lake-950/70 via-lake-950/20 to-transparent" aria-hidden="true"></div>
+        </div>
+      </div>
     </div>
   </section>
 

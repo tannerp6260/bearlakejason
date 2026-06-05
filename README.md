@@ -67,12 +67,13 @@ See `CONTENT_UPDATE_GUIDE.md` for the form-integration checklist.
 
 ## Replacing photos, logo, and headshot
 
-Placeholder assets are stored locally so the site does not rely on remote image URLs:
+Local assets are stored in `public/images/` so the site does not rely on remote image URLs:
 
-- `public/images/placeholders/bear-lake-hero.svg` — replace with an optimized Bear Lake hero photo.
-- `public/images/placeholders/jason-headshot-placeholder.svg` — replace with Jason's professional headshot.
-- `public/images/placeholders/bear-lake-view-realty-logo-placeholder.svg` — replace with the approved Bear Lake View Realty brokerage logo when available.
-- `public/images/logo/bear-lake-jason-mark.svg` — replace with an approved site mark if desired.
+- `public/images/headshots/jp_headshot.png` — Jason's professional headshot, used in the header and About page.
+- `public/images/scenery/bearlake_sunset2.jpeg` — cropped Bear Lake sunset hero image expected by the home page.
+- `public/images/scenery/bearlake_sunset.jpeg` — fallback Bear Lake sunset hero image if the cropped sunset image is not present.
+- `public/images/logo/bearlakeviewrealty_logo.png` — Bear Lake View Realty brokerage logo.
+- `public/images/logo/bear-lake-jason-mark.svg` — approved site mark if desired.
 
 Keep the same filenames to avoid code changes, or update the relevant image paths and alt text in the Astro pages. See `public/images/README.md` and `CONTENT_UPDATE_GUIDE.md` for the image checklist.
 

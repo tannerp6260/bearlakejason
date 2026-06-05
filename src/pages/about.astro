@@ -6,7 +6,13 @@ import { withBasePath } from '@/utils/paths';
 <BaseLayout title="About Jason Petersen" description="Meet Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty and a local Bear Lake-area guide for Utah and Idaho real estate.">
   <section class="py-16 sm:py-24">
     <div class="container-wide grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-      <div><img class="rounded-[2rem] border border-white shadow-soft" src={withBasePath('/images/placeholders/jason-headshot-placeholder.svg')} alt="Professional portrait area for Jason Petersen" /></div>
+      <div class="flex items-center justify-center">
+        <img
+          class="mx-auto w-full max-w-md rounded-[2rem] border border-white shadow-soft"
+          src={withBasePath('/images/headshots/jp_headshot.png')}
+          alt="Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty"
+        />
+      </div>
       <div>
         <p class="eyebrow">About Jason</p>
         <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Local Bear Lake guidance from Jason Petersen</h1>
