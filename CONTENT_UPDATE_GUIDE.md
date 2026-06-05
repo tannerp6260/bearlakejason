@@ -41,16 +41,17 @@ To enable forms:
 
 Do not commit form-provider API secrets to the repo.
 
-## 3. Replace temporary imagery
+## 3. Maintain local imagery
 
-Temporary image files are in `public/images/placeholders/`.
+Local image files are in `public/images/`.
 
-Replace these before final marketing launch:
+Current assets:
 
-- `public/images/placeholders/bear-lake-hero.svg` — use a real Bear Lake hero image.
-- `public/images/placeholders/jason-headshot-placeholder.svg` — use Jason's professional headshot.
-- `public/images/placeholders/bear-lake-view-realty-logo-placeholder.svg` — use the approved Bear Lake View Realty brokerage logo when available.
-- `public/images/logo/bear-lake-jason-mark.svg` — use an approved site mark/logo if desired.
+- `public/images/scenery/bearlake_sunset2.jpeg` — cropped Bear Lake sunset hero image expected by the home page.
+- `public/images/scenery/bearlake_sunset.jpeg` — fallback Bear Lake sunset image if the cropped sunset image is not present.
+- `public/images/headshots/jp_headshot.png` — Jason's professional headshot.
+- `public/images/logo/bearlakeviewrealty_logo.png` — Bear Lake View Realty brokerage logo.
+- `public/images/logo/bear-lake-jason-mark.svg` — approved site mark/logo if desired.
 
 Best practices:
 

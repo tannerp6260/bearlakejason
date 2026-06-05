@@ -8,15 +8,22 @@ import { towns } from '@/data/towns';
 import { withBasePath } from '@/utils/paths';
 ---
 <BaseLayout title="Bear Lake Real Estate With Local Expertise" description="Jason Petersen with Bear Lake View Realty helps buyers and sellers around Bear Lake, including Garden City, Fish Haven, Laketown, and St. Charles.">
-  <section class="relative overflow-hidden bg-gradient-to-br from-timber-50 via-white to-lake-100/70 py-16 sm:py-24">
-    <div class="container-wide grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-      <div>
+  <section class="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-lake-950">
+    <img
+      class="absolute inset-0 z-0 h-full w-full object-cover object-center"
+      src={withBasePath('/images/scenery/bearlake_sunset2.jpeg')}
+      alt="Bear Lake sunset over the water and mountains"
+      onerror={`this.onerror=null;this.src='${withBasePath('/images/scenery/bearlake_sunset.jpeg')}'`}
+    />
+    <div class="absolute inset-0 z-10 bg-lake-950/20" aria-hidden="true"></div>
+    <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/80 via-black/45 to-transparent" aria-hidden="true"></div>
+    <div class="container-wide relative z-20 flex min-h-[calc(100svh-5rem)] items-center py-16 sm:py-24">
+      <div class="max-w-3xl rounded-[2rem] border border-white/85 bg-white/90 p-8 shadow-soft backdrop-blur-sm sm:p-10 lg:p-12">
         <p class="eyebrow">Bear Lake real estate · Utah + Idaho</p>
         <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight text-lake-950 sm:text-6xl lg:text-7xl">Bear Lake Real Estate With Local Expertise</h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-lake-900/75">Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty, helps buyers and sellers navigate Bear Lake homes, cabins, second homes, condos, townhomes, building lots, and investment-minded property questions with local context and responsive communication.</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton /><a class="btn-secondary" href={withBasePath('/contact/')}>Ask About Bear Lake Property</a></div>
       </div>
-      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src={withBasePath('/images/placeholders/bear-lake-hero.svg')} alt="Stylized Bear Lake mountain and cabin scene" /></div>
     </div>
   </section>
 
