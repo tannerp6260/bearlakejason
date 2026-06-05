@@ -3,6 +3,6 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-	site: 'https://bearlakejason.pages.dev',
+	site: 'https://bearlakejason.com',
   integrations: [tailwind(), sitemap()],
 });
