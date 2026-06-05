@@ -8,16 +8,25 @@ const schema = {
   worksFor: {
     '@type': 'RealEstateAgent',
     name: site.brokerage,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '65 West Logan Road #9B',
+      addressLocality: 'Garden City',
+      addressRegion: 'UT',
+      postalCode: '84028',
+      addressCountry: 'US',
+    },
   },
   telephone: site.phone,
   url: site.domain,
-  areaServed: ['Bear Lake', 'Garden City UT', 'Fish Haven ID', 'Laketown UT', 'St. Charles ID'],
+  areaServed: ['Bear Lake', 'Rich County UT', 'Bear Lake County ID', 'Garden City UT', 'Fish Haven ID', 'Laketown UT', 'St. Charles ID'],
   knowsAbout: [
     'Bear Lake real estate',
     'Bear Lake cabins',
     'Bear Lake building lots',
     'Bear Lake second homes',
-    'Bear Lake vacation rental property considerations',
+    'Bear Lake nightly rental property considerations',
+    'Utah and Idaho Bear Lake property guidance',
   ],
 };
 ---

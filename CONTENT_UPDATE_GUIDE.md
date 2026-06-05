@@ -1,6 +1,6 @@
 # Website Content Update Guide
 
-This guide lists the changes you still need to make on your end before treating the MVP as final production content. The codebase is production-deployable, but several business-specific assets, copy decisions, and integrations require your approval or real source material.
+This guide lists remaining owner-side content and asset decisions before treating the site as final production content. The codebase is production-deployable, but several business-specific assets, copy decisions, and integrations require approval or real source material.
 
 ## 1. Contact details and business constants
 
@@ -41,15 +41,16 @@ To enable forms:
 
 Do not commit form-provider API secrets to the repo.
 
-## 3. Replace placeholder imagery
+## 3. Replace temporary imagery
 
-Placeholder files are in `public/images/placeholders/`.
+Temporary image files are in `public/images/placeholders/`.
 
 Replace these before final marketing launch:
 
 - `public/images/placeholders/bear-lake-hero.svg` — use a real Bear Lake hero image.
 - `public/images/placeholders/jason-headshot-placeholder.svg` — use Jason's professional headshot.
-- `public/images/logo/bear-lake-jason-mark.svg` — use an approved mark/logo if permitted.
+- `public/images/placeholders/bear-lake-view-realty-logo-placeholder.svg` — use the approved Bear Lake View Realty brokerage logo when available.
+- `public/images/logo/bear-lake-jason-mark.svg` — use an approved site mark/logo if desired.
 
 Best practices:
 
@@ -81,7 +82,7 @@ Add or refine:
 - Builder/local vendor relationships, if accurate and compliant.
 - A more personal paragraph if Jason wants the site to feel warmer.
 
-Avoid unverifiable claims such as “best,” “top,” “#1,” or guaranteed outcomes unless you have compliant documentation and brokerage approval.
+Avoid unverifiable claims such as “best,” “top,” “#1,” or outcome promises unless you have compliant documentation and brokerage approval.
 
 ## 6. Compliance review
 
@@ -110,19 +111,19 @@ Review these for accuracy, tone, and compliance. Expand only when you have usefu
 
 ## 8. Testimonials
 
-The production MVP intentionally removed fake testimonial cards from the home page. If you later add testimonials:
+The production site intentionally excludes testimonial and rating cards for now. If you later add testimonials:
 
 1. Use only real client quotes.
 2. Get written permission.
 3. Keep a record of approval.
 4. Include attribution only as approved by the client.
-5. Do not imply guaranteed results.
+5. Do not imply promised results.
 
 A future testimonial component can be added once you have verified source material.
 
 ## 9. Listings and IDX
 
-The current MVP does not include IDX or live MLS data. This is intentional.
+The current site does not include IDX or live MLS data. This is intentional.
 
 If you later want listings:
 
@@ -141,7 +142,7 @@ For each page, review:
 - Canonical URL.
 - Social image.
 
-The current social image is the hero placeholder. Replace it with a real, polished image before actively sharing the site.
+The current social image is the temporary hero artwork. Replace it with a real, polished image before actively sharing the site.
 
 ## 11. Future content expansion ideas
 

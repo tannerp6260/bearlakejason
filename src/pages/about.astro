@@ -3,14 +3,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTASection from '@/components/sections/CTASection.astro';
 import { withBasePath } from '@/utils/paths';
 ---
-<BaseLayout title="About Jason Petersen" description="Meet Jason Petersen, Associate Broker / Sales Agent with Bear Lake View Realty and a local Bear Lake-area guide for Utah and Idaho real estate.">
+<BaseLayout title="About Jason Petersen" description="Meet Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty and a local Bear Lake-area guide for Utah and Idaho real estate.">
   <section class="py-16 sm:py-24">
     <div class="container-wide grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-      <div><img class="rounded-[2rem] border border-white shadow-soft" src={withBasePath('/images/placeholders/jason-headshot-placeholder.svg')} alt="Professional headshot placeholder for Jason Petersen" /></div>
+      <div><img class="rounded-[2rem] border border-white shadow-soft" src={withBasePath('/images/placeholders/jason-headshot-placeholder.svg')} alt="Professional portrait area for Jason Petersen" /></div>
       <div>
         <p class="eyebrow">About Jason</p>
         <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Local Bear Lake guidance from Jason Petersen</h1>
-        <p class="mt-6 text-lg leading-8 text-lake-900/75">Jason Petersen is an Associate Broker / Sales Agent with Bear Lake View Realty, licensed in Utah and Idaho. With 25+ years living in the Bear Lake area, he helps clients understand local property differences that online search tools may miss.</p>
+        <p class="mt-6 text-lg leading-8 text-lake-900/75">Jason Petersen is a Utah and Idaho licensed REALTOR® / Associate Broker with Bear Lake View Realty. He has lived in Rich County for about 25 years, raised his family in the Bear Lake area, and has first-hand knowledge of communities throughout the region, including Garden City, Woodruff, Rich County, Bear Lake County, and both the Utah and Idaho sides of Bear Lake.</p>
         <div class="mt-8 grid gap-4 sm:grid-cols-2">
           {['25+ years in the area', 'Fast communication and follow-through', 'Utah and Idaho side insight', 'Builder connections for lot buyers'].map((item) => <div class="card"><h2 class="font-serif text-xl font-semibold">{item}</h2></div>)}
         </div>
@@ -21,8 +21,8 @@ import { withBasePath } from '@/utils/paths';
     <div class="container-narrow">
       <h2 class="font-serif text-3xl font-semibold">A practical local guide — not just another search result</h2>
       <p class="mt-5 leading-8 text-lake-900/75">Bear Lake real estate can involve second-home timing, cabin maintenance, winter access, local rental rules, building constraints, HOA expectations, lake access, and community differences between Garden City, Fish Haven, Laketown, St. Charles, and nearby areas. Jason’s role is to help you ask better questions before you make a decision.</p>
-      <p class="mt-5 leading-8 text-lake-900/75">Clients value Jason’s communication style: he returns calls and texts quickly, follows through, and keeps the process conversational. For lot buyers, he can also help connect you with builders and local resources as you evaluate whether building makes sense.</p>
-      <div class="mt-8 rounded-3xl border border-lake-900/10 bg-lake-50 p-6"><h3 class="font-serif text-2xl font-semibold">Local, practical, and easy to reach</h3><p class="mt-3 leading-7 text-lake-900/70">Use this page as the production-ready baseline for Jason's bio. Add more personal details, community involvement, and final photography when approved, but the MVP can launch with the current compliance-minded summary.</p></div>
+      <p class="mt-5 leading-8 text-lake-900/75">Jason’s style is practical and conversational. He helps buyers and sellers think through local details, timing, property condition, neighborhood differences, and next steps without pressure. For lot buyers, he can also help connect you with builders and local resources as you evaluate whether building makes sense.</p>
+      <div class="mt-8 rounded-3xl border border-lake-900/10 bg-lake-50 p-6"><h3 class="font-serif text-2xl font-semibold">Local, practical, and easy to reach</h3><p class="mt-3 leading-7 text-lake-900/70">Jason helps buyers and sellers with homes, second homes, nightly rental properties, condos, townhomes, lots, land, and investment-minded Bear Lake properties. His approach is practical, honest, local, and no-pressure. With a background in teaching, technical work, and business operations, Jason brings a detail-oriented approach to helping clients make informed real estate decisions.</p></div>
     </div>
   </section>
   <CTASection />

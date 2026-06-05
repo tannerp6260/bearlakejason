@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
-  <title id="title">Bear Lake cabin and mountain placeholder</title>
-  <desc id="desc">A stylized lake, mountain, and cabin scene used as a placeholder.</desc>
+  <title id="title">Bear Lake cabin and mountain scene</title>
+  <desc id="desc">A stylized lake, mountain, and cabin scene.</desc>
   <rect width="1200" height="900" fill="#effafa"/>
   <path d="M0 520c155-70 292-74 410-12s230 67 352 15 272-61 438 0v377H0z" fill="#d7f0f0"/>
   <path d="M0 365 210 130l185 235 145-160 210 250 166-205 284 300v350H0z" fill="#244b51"/>
