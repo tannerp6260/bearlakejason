@@ -49,7 +49,7 @@ body {
 }
 
 .input {
-  @apply w-full rounded-2xl border border-lake-900/15 bg-white px-4 py-3 text-base text-lake-950 placeholder:text-lake-900/45 focus:border-lake-600;
+  @apply w-full rounded-2xl border border-lake-900/15 bg-white px-4 py-3 text-base text-lake-950 focus:border-lake-600;
 }
 
 .label {

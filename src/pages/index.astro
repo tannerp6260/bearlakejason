@@ -17,7 +17,7 @@ import { withBasePath } from '@/utils/paths';
         <p class="mt-6 max-w-2xl text-lg leading-8 text-lake-900/75">Jason Petersen, {site.title} with Bear Lake View Realty, helps buyers and sellers throughout the Bear Lake area with homes, second homes, cabins, condos, townhomes, lots, land, nightly-rental considerations, and investment-minded properties on both the Utah and Idaho sides of the lake.</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton /><a class="btn-secondary" href={withBasePath('/contact/')}>Ask About Bear Lake Property</a></div>
       </div>
-      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src={withBasePath('/images/placeholders/bear-lake-hero.svg')} alt="Bear Lake mountain and cabin scene representing local real estate guidance" /></div>
+      <div class="relative"><img class="w-full rounded-[2rem] border border-white/80 shadow-soft" src={withBasePath(site.heroImage)} alt="Sunset over Bear Lake with mountain views" /></div>
     </div>
   </section>
 
@@ -45,7 +45,7 @@ import { withBasePath } from '@/utils/paths';
     <div class="container-narrow rounded-[2rem] bg-white p-8 text-center shadow-soft">
       <p class="eyebrow">Featured properties</p>
       <h2 class="mt-3 font-serif text-3xl font-semibold">Ask Jason about current Bear Lake property options</h2>
-      <p class="mx-auto mt-4 max-w-2xl leading-7 text-lake-900/70">For Jason’s current Bear Lake listings, featured properties, off-market opportunities, and local property guidance, call or text Jason directly at {site.phone}. Live listing search is not displayed here until the appropriate MLS, brokerage, or approved search setup is confirmed.</p>
+      <p class="mx-auto mt-4 max-w-2xl leading-7 text-lake-900/70">For current Bear Lake listings, featured properties, private-showing questions, and local property guidance, call or text Jason directly at {site.phone}. Jason can help you review available homes, cabins, condos, townhomes, lots, land, and second-home options that match your goals.</p>
       <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row"><CallButton label="Call/Text for current options" /><a class="btn-secondary" href={withBasePath('/featured-properties/')}>Featured Properties</a></div>
     </div>
   </section>

@@ -41,21 +41,23 @@ To enable forms:
 
 Do not commit form-provider API secrets to the repo.
 
-## 3. Replace placeholder imagery
+## 3. Maintain production imagery
 
-Placeholder files are in `public/images/placeholders/`.
+The current pull-request-friendly image set uses SVG placeholders so the PR does not include unsupported binary files.
 
-Replace these before final marketing launch:
+Current temporary assets:
 
-- `public/images/placeholders/bear-lake-hero.svg` — use a real Bear Lake hero image.
-- `public/images/placeholders/jason-headshot-placeholder.svg` — use Jason's professional headshot.
-- `public/images/logo/bear-lake-jason-mark.svg` — use an approved mark/logo if permitted.
+- `public/images/placeholders/bear-lake-hero.svg` — temporary Bear Lake hero, supporting scenery, and social image.
+- `public/images/placeholders/jason-headshot-placeholder.svg` — temporary Jason Petersen headshot image.
+- `public/images/logo/bear-lake-jason-mark.svg` — temporary site mark used for the header and favicon.
+
+When binary uploads are supported, add the supplied production logo, Bear Lake scenery, and Jason headshot, then update `src/data/site.ts` and any relevant alt text in the Astro pages.
 
 Best practices:
 
 - Use local files, not remote hotlinked images.
-- Keep filenames the same if you want to avoid code changes.
-- If you change filenames, update the corresponding `src` paths and alt text in the Astro pages.
+- Keep filenames stable if you want to avoid code changes.
+- If you change filenames, update `src/data/site.ts` and any relevant alt text in the Astro pages.
 - Export photos as optimized `.webp` or high-quality `.jpg` where appropriate.
 - Keep large hero images reasonably compressed; avoid multi-megabyte uploads.
 
@@ -141,7 +143,7 @@ For each page, review:
 - Canonical URL.
 - Social image.
 
-The current social image is the hero placeholder. Replace it with a real, polished image before actively sharing the site.
+The current social image uses the primary Bear Lake sunset panorama configured in `src/data/site.ts`.
 
 ## 11. Future content expansion ideas
 

@@ -17,6 +17,10 @@ export const site = {
   description:
     'Jason Petersen helps Bear Lake buyers and sellers with homes, second homes, cabins, condos, townhomes, lots, land, nightly-rental considerations, and investment-minded properties on both the Utah and Idaho sides of the lake.',
   formEndpoint: formEndpoint || 'https://formspree.io/f/xlgzojyv',
+  logoImage: '/images/logo/bear-lake-jason-mark.svg',
+  heroImage: '/images/placeholders/bear-lake-hero.svg',
+  scenicImage: '/images/placeholders/bear-lake-hero.svg',
+  headshotImage: '/images/placeholders/jason-headshot-placeholder.svg',
   socialImage: '/images/placeholders/bear-lake-hero.svg',
 };
 

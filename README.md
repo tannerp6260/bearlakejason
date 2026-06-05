@@ -73,13 +73,13 @@ See `CONTENT_UPDATE_GUIDE.md` for the form-integration checklist.
 
 ## Replacing photos, logo, and headshot
 
-Placeholder assets are stored locally so the site does not rely on remote image URLs:
+The current pull-request-friendly image set uses SVG placeholders so the PR does not include unsupported binary files:
 
-- `public/images/placeholders/bear-lake-hero.svg` — replace with an optimized Bear Lake hero photo.
-- `public/images/placeholders/jason-headshot-placeholder.svg` — replace with Jason's professional headshot.
-- `public/images/logo/bear-lake-jason-mark.svg` — replace with an approved logo/mark or brokerage logo if permitted.
+- `public/images/placeholders/bear-lake-hero.svg` — temporary Bear Lake hero, supporting scenery, and social image.
+- `public/images/placeholders/jason-headshot-placeholder.svg` — temporary Jason Petersen headshot image.
+- `public/images/logo/bear-lake-jason-mark.svg` — temporary site mark used for the header and favicon.
 
-Keep the same filenames to avoid code changes, or update the relevant image paths and alt text in the Astro pages. See `public/images/README.md` and `CONTENT_UPDATE_GUIDE.md` for the image checklist.
+When binary uploads are supported, add the supplied production logo, Bear Lake scenery, and Jason headshot, then update the relevant image paths and alt text in `src/data/site.ts` and the Astro pages. See `public/images/README.md` and `CONTENT_UPDATE_GUIDE.md` for the image checklist.
 
 ## Content updates
 
@@ -94,7 +94,7 @@ Most reusable content lives in `src/data/`:
 
 - The site no longer depends on the GitHub Pages `/bearlakejason` base path.
 - Astro sitemap generation is enabled for the production domain.
-- Fake testimonial placeholders were removed from the home page.
-- The contact form does not submit to a placeholder URL; it requires a real endpoint before rendering as a form.
+- Testimonials should only be added when real client-approved copy and attribution are available.
+- The contact form is configured through `PUBLIC_FORM_ENDPOINT`, with a production fallback endpoint in `src/data/site.ts`.
 - License numbers are intentionally omitted until provided.
 - Vacation-rental content avoids guaranteed income or investment-return claims.
