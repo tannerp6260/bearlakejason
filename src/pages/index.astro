@@ -8,21 +8,21 @@ import { towns } from '@/data/towns';
 import { withBasePath } from '@/utils/paths';
 ---
 <BaseLayout title="Bear Lake Real Estate With Local Expertise" description="Jason Petersen with Bear Lake View Realty helps buyers and sellers around Bear Lake, including Garden City, Fish Haven, Laketown, and St. Charles.">
-  <section class="relative overflow-hidden bg-gradient-to-br from-timber-50 via-white to-lake-100/70 py-16 sm:py-24">
-    <div class="container-wide grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-      <div>
+  <section class="relative isolate overflow-hidden py-20 sm:py-28">
+    <img
+      class="absolute inset-0 -z-30 h-full w-full object-cover object-[center_72%]"
+      src={withBasePath('/images/scenery/bearlake_sunset.jpeg')}
+      alt=""
+      aria-hidden="true"
+    />
+    <div class="absolute inset-0 -z-20 bg-gradient-to-r from-timber-50/95 via-timber-50/88 to-lake-950/35"></div>
+    <div class="absolute inset-0 -z-10 bg-lake-950/10"></div>
+    <div class="container-wide">
+      <div class="max-w-3xl rounded-[2rem] border border-white/70 bg-white/85 p-8 shadow-soft backdrop-blur sm:p-10">
         <p class="eyebrow">Bear Lake real estate · Utah + Idaho</p>
         <h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight text-lake-950 sm:text-6xl lg:text-7xl">Bear Lake Real Estate With Local Expertise</h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-lake-900/75">Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty, helps buyers and sellers navigate Bear Lake homes, cabins, second homes, condos, townhomes, building lots, and investment-minded property questions with local context and responsive communication.</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row"><CallButton /><a class="btn-secondary" href={withBasePath('/contact/')}>Ask About Bear Lake Property</a></div>
-      </div>
-      <div class="relative rounded-[2rem] bg-lake-900/5 p-2 shadow-soft">
-        <div class="absolute -right-4 -top-4 hidden h-24 w-24 rounded-full bg-timber-300/50 blur-2xl sm:block"></div>
-        <img
-          class="relative aspect-[4/3] w-full rounded-[1.6rem] border border-white/80 object-cover shadow-sm"
-          src={withBasePath('/images/scenery/bearlake_sunset.jpeg')}
-          alt="Bear Lake sunset over the water and surrounding mountains"
-        />
       </div>
     </div>
   </section>
