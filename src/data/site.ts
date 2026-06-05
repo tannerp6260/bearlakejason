@@ -10,6 +10,8 @@ export const site = {
   phone: '435-757-9069',
   phoneHref: 'tel:+14357579069',
   smsHref: 'sms:+14357579069',
+  brokeragePhone: '(435) 881-9774',
+  brokeragePhoneHref: 'tel:+14358819774',
   emailTarget,
   emailHref: `mailto:${emailTarget}`,
   domain: productionDomain,
@@ -17,7 +19,7 @@ export const site = {
   description:
     'Bear Lake real estate guidance from Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty, licensed in Utah and Idaho.',
   formEndpoint: 'https://formspree.io/f/xlgzojyv',
-  socialImage: '/images/scenery/bearlake_sunset2.JPG',
+  socialImage: '/images/scenery/bearlake_sunset2.jpeg',
 };
 
 export const rentalDisclaimer =

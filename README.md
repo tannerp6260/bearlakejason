@@ -81,7 +81,7 @@ Keep the same filenames to avoid code changes, or update the relevant image path
 
 Most reusable content lives in `src/data/`:
 
-- `site.ts` — business details, phone number, email target, domain, form endpoint state, disclaimers.
+- `site.ts` — business details, agent and brokerage phone numbers, email target, domain, form endpoint state, disclaimers.
 - `navigation.ts` — primary navigation.
 - `services.ts` — home page service cards.
 - `towns.ts` — Garden City, Fish Haven, Laketown, and St. Charles content.

@@ -5,20 +5,26 @@ import { withBasePath } from '@/utils/paths';
 ---
 <header class="sticky top-0 z-50 border-b border-lake-900/10 bg-timber-50/90 backdrop-blur">
   <nav class="container-wide flex min-h-20 items-center justify-between gap-4" aria-label="Primary navigation">
-    <a href={withBasePath('/')} class="group flex items-center gap-3" aria-label="Jason Petersen home">
-      <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-lake-900/10 bg-white shadow-sm">
-        <img
-          class="max-h-full max-w-full object-contain object-center"
-          src={withBasePath('/images/headshots/jp_headshot.png')}
-          alt="Jason Petersen headshot"
-        />
-      </span>
-      <span class="leading-tight">
-        <span class="block font-serif text-lg font-semibold text-lake-950">Jason Petersen</span>
-        <span class="block text-xs font-semibold uppercase tracking-wide text-lake-800">Bear Lake View Realty</span>
-        <span class="block text-[0.65rem] font-semibold uppercase tracking-wide text-lake-700/80">Utah &amp; Idaho</span>
-      </span>
-    </a>
+    <div class="flex items-center gap-3 sm:gap-4">
+      <a href={withBasePath('/')} class="group flex items-center gap-3" aria-label="Jason Petersen home">
+        <span class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-lake-900/10 bg-white shadow-sm">
+          <img
+            class="max-h-full max-w-full object-contain object-center"
+            src={withBasePath('/images/headshots/jp_headshot.png')}
+            alt="Jason Petersen headshot"
+          />
+        </span>
+        <span class="leading-tight">
+          <span class="block font-serif text-lg font-semibold text-lake-950">Jason Petersen</span>
+          <span class="block text-xs font-semibold uppercase tracking-wide text-lake-800">{site.brokerage}</span>
+          <span class="block text-[0.65rem] font-semibold uppercase tracking-wide text-lake-700/80">Utah &amp; Idaho</span>
+        </span>
+      </a>
+      <a class="hidden rounded-full border border-lake-900/10 bg-white px-3 py-2 text-xs font-bold leading-tight text-lake-900 shadow-sm transition hover:border-lake-800/30 hover:text-lake-950 sm:block" href={site.brokeragePhoneHref} aria-label={`Call ${site.brokerage} at ${site.brokeragePhone}`}>
+        <span class="block uppercase tracking-wide text-lake-700/70">Brokerage</span>
+        <span class="block">{site.brokeragePhone}</span>
+      </a>
+    </div>
     <div class="hidden items-center gap-7 lg:flex">
       {navigation.map((item) => (
         <a class="text-sm font-semibold text-lake-900/75 transition hover:text-lake-950" href={withBasePath(item.href)}>{item.label}</a>
@@ -29,6 +35,7 @@ import { withBasePath } from '@/utils/paths';
     </a>
   </nav>
   <div class="container-wide flex gap-2 overflow-x-auto pb-3 lg:hidden" aria-label="Mobile navigation">
+    <a class="shrink-0 rounded-full border border-lake-900/10 bg-white px-4 py-2 text-sm font-semibold text-lake-900 sm:hidden" href={site.brokeragePhoneHref}>Brokerage: {site.brokeragePhone}</a>
     {navigation.map((item) => (
       <a class="shrink-0 rounded-full border border-lake-900/10 bg-white px-4 py-2 text-sm font-semibold text-lake-900" href={withBasePath(item.href)}>{item.label}</a>
     ))}
