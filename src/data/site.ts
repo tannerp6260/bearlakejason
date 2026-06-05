@@ -6,7 +6,7 @@ export const site = {
   title: 'REALTOR® / Associate Broker',
   brokerage: 'Bear Lake View Realty',
   brokerageAddress: '65 West Logan Road #9B, Garden City, Utah 84028',
-  brokerageLogo: '/images/placeholders/bear-lake-view-realty-logo-placeholder.svg',
+  brokerageLogo: '/images/logo/bearlakeviewrealty_logo.png',
   phone: '435-757-9069',
   phoneHref: 'tel:+14357579069',
   smsHref: 'sms:+14357579069',
