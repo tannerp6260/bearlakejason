@@ -21,9 +21,9 @@ import { withBasePath } from '@/utils/paths';
       <div class="mt-4 flex w-56 items-center justify-center rounded-2xl bg-white p-3">
         <img class="max-h-24 max-w-full object-contain object-center" src={withBasePath(site.brokerageLogo)} alt={`${site.brokerage} logo`} loading="lazy" />
       </div>
-      <p class="mt-4 text-sm leading-6 text-lake-100/75">{site.brokerage}<br />{site.brokerageAddress}</p>
+      <p class="mt-4 text-sm leading-6 text-lake-100/75">{site.brokerage}<br />{site.brokerageAddress}<br /><a class="hover:text-white" href={site.brokeragePhoneHref}>Brokerage: {site.brokeragePhone}</a></p>
       <p class="mt-4 font-semibold">Contact</p>
-      <a class="mt-3 block text-sm text-lake-100/75 hover:text-white" href={site.phoneHref}>{site.phone}</a>
+      <a class="mt-3 block text-sm text-lake-100/75 hover:text-white" href={site.phoneHref}>Jason: {site.phone}</a>
       <a class="mt-2 block text-sm text-lake-100/75 hover:text-white" href={site.emailHref}>{site.emailTarget}</a>
       <p class="mt-4 text-xs leading-5 text-lake-100/55">Equal Housing Opportunity. Information should be independently verified with appropriate professionals, local authorities, HOA documents, and current market data.</p>
     </div>

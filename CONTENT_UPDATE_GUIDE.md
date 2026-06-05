@@ -14,13 +14,15 @@ Review and update:
 - `phone`
 - `phoneHref`
 - `smsHref`
+- `brokeragePhone`
+- `brokeragePhoneHref`
 - `emailTarget`
 - `domain`
 - `licensed`
 - `description`
 - `socialImage`
 
-Keep `phoneHref` in `tel:+1...` format and `smsHref` in `sms:+1...` format.
+Keep `phoneHref`, `smsHref`, and `brokeragePhoneHref` in `tel:+1...` / `sms:+1...` format. The public display format can use hyphens or parentheses as approved by the brokerage.
 
 ## 2. Form integration
 
@@ -89,7 +91,7 @@ Avoid unverifiable claims such as “best,” “top,” “#1,” or outcome pr
 
 Before final launch, confirm with Jason and/or brokerage compliance:
 
-- Exact required brokerage display language.
+- Exact required brokerage display language and whether the brokerage phone must appear in any specific location or size.
 - Whether license numbers must be shown.
 - Correct title wording for Utah and Idaho.
 - Whether Equal Housing Opportunity wording needs a logo or specific phrase.
