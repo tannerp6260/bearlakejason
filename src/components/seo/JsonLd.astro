@@ -1,13 +1,28 @@
 ---
 import { site } from '@/data/site';
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'RealEstateAgent',
-  name: site.name,
-  jobTitle: site.title,
-  worksFor: {
+
+type SchemaNode = Record<string, unknown>;
+
+const { schema: pageSchema } = Astro.props as { schema?: SchemaNode | SchemaNode[] };
+const siteUrl = site.domain;
+const logoUrl = new URL(site.brokerageLogo, siteUrl).toString();
+const imageUrl = new URL(site.socialImage, siteUrl).toString();
+
+const agentId = `${siteUrl}/#real-estate-agent`;
+const brokerageId = `${siteUrl}/#brokerage`;
+const websiteId = `${siteUrl}/#website`;
+
+const baseSchema: SchemaNode[] = [
+  {
+    '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: site.brokerage,
+    '@id': agentId,
+    name: site.name,
+    jobTitle: site.title,
+    image: imageUrl,
+    telephone: site.phone,
+    email: site.emailTarget,
+    url: siteUrl,
     address: {
       '@type': 'PostalAddress',
       streetAddress: '65 West Logan Road #9B',
@@ -16,19 +31,52 @@ const schema = {
       postalCode: '84028',
       addressCountry: 'US',
     },
-    telephone: site.brokeragePhone,
+    worksFor: { '@id': brokerageId },
+    areaServed: [
+      { '@type': 'Place', name: 'Bear Lake' },
+      { '@type': 'AdministrativeArea', name: 'Rich County, Utah' },
+      { '@type': 'AdministrativeArea', name: 'Bear Lake County, Idaho' },
+      { '@type': 'City', name: 'Garden City, Utah' },
+      { '@type': 'City', name: 'Fish Haven, Idaho' },
+      { '@type': 'City', name: 'Laketown, Utah' },
+      { '@type': 'City', name: 'St. Charles, Idaho' },
+    ],
+    knowsAbout: [
+      'Bear Lake real estate',
+      'Bear Lake cabins',
+      'Bear Lake building lots',
+      'Bear Lake second homes',
+      'Bear Lake nightly rental property considerations',
+      'Utah and Idaho Bear Lake property guidance',
+    ],
   },
-  telephone: site.phone,
-  url: site.domain,
-  areaServed: ['Bear Lake', 'Rich County UT', 'Bear Lake County ID', 'Garden City UT', 'Fish Haven ID', 'Laketown UT', 'St. Charles ID'],
-  knowsAbout: [
-    'Bear Lake real estate',
-    'Bear Lake cabins',
-    'Bear Lake building lots',
-    'Bear Lake second homes',
-    'Bear Lake nightly rental property considerations',
-    'Utah and Idaho Bear Lake property guidance',
-  ],
-};
+  {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    '@id': brokerageId,
+    name: site.brokerage,
+    logo: logoUrl,
+    telephone: site.brokeragePhone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '65 West Logan Road #9B',
+      addressLocality: 'Garden City',
+      addressRegion: 'UT',
+      postalCode: '84028',
+      addressCountry: 'US',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': websiteId,
+    name: 'Jason Petersen Bear Lake Real Estate',
+    url: siteUrl,
+    publisher: { '@id': agentId },
+    inLanguage: 'en-US',
+  },
+];
+
+const schema = Array.isArray(pageSchema) ? [...baseSchema, ...pageSchema] : pageSchema ? [...baseSchema, pageSchema] : baseSchema;
 ---
 <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

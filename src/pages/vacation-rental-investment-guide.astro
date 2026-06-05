@@ -1,13 +1,47 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CTASection from '@/components/sections/CTASection.astro';
-import { rentalDisclaimer } from '@/data/site';
+import { rentalDisclaimer, site } from '@/data/site';
+import { rentalFaqs } from '@/data/faqs';
 import { withBasePath } from '@/utils/paths';
 const topics = ['Cost and Carrying Costs', 'Rental Potential by Property', 'Bedroom Count and Sleeping Layout', 'Seasonal Rental Windows', 'Parking and Access', 'HOA and Local Restrictions', 'Amenities and Guest Usability', 'Property Management Considerations'];
+const rentalSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${site.domain}/vacation-rental-investment-guide/#webpage`,
+    url: `${site.domain}/vacation-rental-investment-guide/`,
+    name: 'Bear Lake Rental and Investment-Minded Guidance',
+    description:
+      'Bear Lake real estate guidance for nightly rental, short-term rental, and investment-minded property questions with careful, property-specific local context.',
+    isPartOf: { '@id': `${site.domain}/#website` },
+    about: { '@id': `${site.domain}/#real-estate-agent` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: rentalFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  },
+];
 ---
-<BaseLayout title="Bear Lake Rental and Investment-Minded Guidance" description="Bear Lake real estate guidance for nightly rental, short-term rental, and investment-minded property questions with careful, property-specific local context.">
+<BaseLayout title="Bear Lake Rental and Investment-Minded Guidance" description="Bear Lake real estate guidance for nightly rental, short-term rental, and investment-minded property questions with careful, property-specific local context." canonical="/vacation-rental-investment-guide/" schema={rentalSchema}>
   <section class="py-16 sm:py-24"><div class="container-narrow"><p class="eyebrow">Rental-Aware Guidance</p><h1 class="mt-4 font-serif text-5xl font-semibold tracking-tight">Bear Lake Nightly Rental and Investment-Minded Property Considerations</h1><p class="mt-6 text-lg leading-8 text-lake-900/75">Jason helps investment-minded buyers and sellers talk through Bear Lake nightly rental and short-term rental considerations clearly, carefully, and with property-specific local context.</p><a class="btn-primary mt-8" href={withBasePath('/contact/')}>Ask Jason about rental-aware properties</a></div></section>
   <section class="bg-white py-16"><div class="container-wide grid gap-10 lg:grid-cols-[0.9fr_1.1fr]"><div><h2 class="font-serif text-3xl font-semibold">Practical Rental Considerations</h2><p class="mt-5 leading-8 text-lake-900/75">Jason helps clients think through Bear Lake rental potential, HOA and local rules, property features, location, bedroom count, parking, amenities, and competition in the area. Bear Lake View Realty also brings local familiarity with vacation-rental and second-home considerations.</p><p class="mt-5 leading-8 text-lake-900/75">Jason can help you understand property-specific questions before you buy or position a property for sale, including local rules, buyer due diligence, property details, and conversations to have with qualified tax, lending, insurance, or property-management professionals.</p></div><div class="grid gap-4 sm:grid-cols-2">{topics.map((topic) => <div class="card"><h3 class="font-serif text-xl font-semibold">{topic}</h3></div>)}</div></div></section>
   <section class="py-10"><div class="container-narrow"><div class="rounded-2xl border border-lake-900/10 bg-white/80 p-5 shadow-sm sm:flex sm:items-start sm:gap-4"><h2 class="shrink-0 font-serif text-xl font-semibold text-lake-950">Rental Note</h2><p class="mt-2 leading-7 text-lake-900/70 sm:mt-0">{rentalDisclaimer}</p></div></div></section>
+  <section class="bg-white py-16">
+    <div class="container-narrow">
+      <h2 class="font-serif text-3xl font-semibold">Rental-Aware Buyer Questions</h2>
+      <div class="mt-8 grid gap-5">
+        {rentalFaqs.map((faq) => <article class="card"><h3 class="font-serif text-2xl font-semibold">{faq.question}</h3><p class="mt-3 leading-7 text-lake-900/70">{faq.answer}</p></article>)}
+      </div>
+    </div>
+  </section>
   <CTASection />
 </BaseLayout>
