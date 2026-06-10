@@ -1,0 +1,19 @@
+---
+import { site } from '@/data/site';
+
+const googleAdsConversionId = site.googleAdsConversionId;
+---
+{googleAdsConversionId ? (
+  <>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsConversionId}`}></script>
+    <script is:inline define:vars={{ googleAdsConversionId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      window.gtag = window.gtag || gtag;
+      window.gtag('js', new Date());
+      window.gtag('config', googleAdsConversionId);
+    </script>
+  </>
+) : null}

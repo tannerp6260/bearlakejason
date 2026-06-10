@@ -1,5 +1,6 @@
 const productionDomain = 'https://bearlakejason.com';
 const emailTarget = 'huntapplication@gmail.com';
+const defaultFormEndpoint = 'https://formspree.io/f/xlgzojyv';
 
 export const site = {
   name: 'Jason Petersen',
@@ -18,7 +19,9 @@ export const site = {
   licensed: 'Licensed in Utah and Idaho',
   description:
     'Bear Lake real estate guidance from Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty, licensed in Utah and Idaho.',
-  formEndpoint: 'https://formspree.io/f/xlgzojyv',
+  formEndpoint: import.meta.env.PUBLIC_FORM_ENDPOINT || defaultFormEndpoint,
+  googleAdsConversionId: import.meta.env.PUBLIC_GOOGLE_ADS_CONVERSION_ID || '',
+  googleAdsContactConversionLabel: import.meta.env.PUBLIC_GOOGLE_ADS_CONTACT_CONVERSION_LABEL || '',
   socialImage: '/images/scenery/bearlake_sunset2.jpeg',
 };
 

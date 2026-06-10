@@ -2,8 +2,16 @@
 import { site } from '@/data/site';
 const { type = 'general' } = Astro.props;
 const isSeller = type === 'seller';
+const hasGoogleAdsConversion = Boolean(site.googleAdsConversionId && site.googleAdsContactConversionLabel);
 ---
-<form class="card grid gap-4" method="POST" action={site.formEndpoint}>
+<form
+  class="card grid gap-4"
+  method="POST"
+  action={site.formEndpoint}
+  data-google-ads-conversion-form={hasGoogleAdsConversion ? 'true' : undefined}
+  data-google-ads-conversion-id={hasGoogleAdsConversion ? site.googleAdsConversionId : undefined}
+  data-google-ads-conversion-label={hasGoogleAdsConversion ? site.googleAdsContactConversionLabel : undefined}
+>
   <input type="hidden" name="form_type" value={isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry'} />
   <input type="hidden" name="send_to" value={site.emailTarget} />
   <div class="grid gap-4 sm:grid-cols-2">
@@ -22,3 +30,44 @@ const isSeller = type === 'seller';
   <p class="text-sm leading-6 text-lake-900/65" id={`${type}-form-help`}>By submitting this form, you agree that Jason Petersen or Bear Lake View Realty may contact you about your inquiry by phone, text, or email.</p>
   <button class="btn-primary w-full sm:w-auto" type="submit" aria-describedby={`${type}-form-help`}>{isSeller ? 'Request a seller valuation' : 'Send message to Jason'}</button>
 </form>
+
+<script>
+  const trackedContactForms = document.querySelectorAll('form[data-google-ads-conversion-form="true"]');
+
+  trackedContactForms.forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!(form instanceof HTMLFormElement) || form.dataset.googleAdsConversionSubmitted === 'true') {
+        return;
+      }
+
+      const conversionId = form.dataset.googleAdsConversionId;
+      const conversionLabel = form.dataset.googleAdsConversionLabel;
+      const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+
+      if (!conversionId || !conversionLabel || typeof gtag !== 'function') {
+        return;
+      }
+
+      event.preventDefault();
+
+      let formSubmitted = false;
+      const submitForm = () => {
+        if (formSubmitted) {
+          return;
+        }
+
+        formSubmitted = true;
+        form.dataset.googleAdsConversionSubmitted = 'true';
+        HTMLFormElement.prototype.submit.call(form);
+      };
+
+      gtag('event', 'conversion', {
+        send_to: `${conversionId}/${conversionLabel}`,
+        event_callback: submitForm,
+        event_timeout: 2000,
+      });
+
+      window.setTimeout(submitForm, 2200);
+    });
+  });
+</script>
