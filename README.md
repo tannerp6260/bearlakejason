@@ -1,4 +1,4 @@
-# Bear Lake Jason Website
+# Bear Lake Jason Website 
 
 A fast, static, mobile-first Astro website for Jason Petersen, REALTOR® / Associate Broker with Bear Lake View Realty. The site is designed for Bear Lake real estate lead generation and long-term organic SEO.
 
