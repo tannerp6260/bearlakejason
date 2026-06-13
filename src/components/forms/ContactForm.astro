@@ -11,9 +11,21 @@ const hasGoogleAdsConversion = Boolean(site.googleAdsConversionId && site.google
   data-google-ads-conversion-form={hasGoogleAdsConversion ? 'true' : undefined}
   data-google-ads-conversion-id={hasGoogleAdsConversion ? site.googleAdsConversionId : undefined}
   data-google-ads-conversion-label={hasGoogleAdsConversion ? site.googleAdsContactConversionLabel : undefined}
+  data-lead-attribution-form="true"
 >
   <input type="hidden" name="form_type" value={isSeller ? 'Seller valuation request' : 'General Bear Lake inquiry'} />
   <input type="hidden" name="send_to" value={site.emailTarget} />
+  <input type="hidden" name="gclid" value="" />
+  <input type="hidden" name="gbraid" value="" />
+  <input type="hidden" name="wbraid" value="" />
+  <input type="hidden" name="utm_source" value="" />
+  <input type="hidden" name="utm_medium" value="" />
+  <input type="hidden" name="utm_campaign" value="" />
+  <input type="hidden" name="utm_term" value="" />
+  <input type="hidden" name="utm_content" value="" />
+  <input type="hidden" name="landing_page" value="" />
+  <input type="hidden" name="referrer" value="" />
+  <input type="hidden" name="page_path" value="" />
   <div class="grid gap-4 sm:grid-cols-2">
     <label class="grid gap-2"><span class="label">Name</span><input class="input" name="name" autocomplete="name" required /></label>
     <label class="grid gap-2"><span class="label">Phone</span><input class="input" name="phone" autocomplete="tel" required /></label>
@@ -64,10 +76,10 @@ const hasGoogleAdsConversion = Boolean(site.googleAdsConversionId && site.google
       gtag('event', 'conversion', {
         send_to: `${conversionId}/${conversionLabel}`,
         event_callback: submitForm,
-        event_timeout: 2000,
+        event_timeout: 1500,
       });
 
-      window.setTimeout(submitForm, 2200);
+      window.setTimeout(submitForm, 1700);
     });
   });
 </script>
