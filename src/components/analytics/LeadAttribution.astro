@@ -1,0 +1,76 @@
+---
+---
+<script>
+  const attributionKeys = [
+    'gclid',
+    'gbraid',
+    'wbraid',
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_term',
+    'utm_content',
+  ];
+  const storagePrefix = 'bearlakejason_attribution_';
+  const storage = (() => {
+    try {
+      const testKey = `${storagePrefix}test`;
+      window.sessionStorage.setItem(testKey, '1');
+      window.sessionStorage.removeItem(testKey);
+      return window.sessionStorage;
+    } catch {
+      return null;
+    }
+  })();
+
+  const setStoredValue = (key: string, value: string) => {
+    if (!storage || !value) return;
+    storage.setItem(`${storagePrefix}${key}`, value);
+  };
+
+  const getStoredValue = (key: string) => storage?.getItem(`${storagePrefix}${key}`) || '';
+  const params = new URLSearchParams(window.location.search);
+
+  attributionKeys.forEach((key) => {
+    const value = params.get(key);
+    if (value) setStoredValue(key, value);
+  });
+
+  if (!getStoredValue('landing_page')) {
+    setStoredValue('landing_page', window.location.href);
+  }
+
+  if (!getStoredValue('referrer') && document.referrer) {
+    setStoredValue('referrer', document.referrer);
+  }
+
+  const fillAttributionFields = (form: EventTarget | Element | null) => {
+    if (!(form instanceof HTMLFormElement)) return;
+
+    [...attributionKeys, 'landing_page', 'referrer'].forEach((key) => {
+      const input = form.querySelector(`input[name="${key}"]`);
+      if (input instanceof HTMLInputElement) {
+        input.value = getStoredValue(key);
+      }
+    });
+
+    const pagePathInput = form.querySelector('input[name="page_path"]');
+    if (pagePathInput instanceof HTMLInputElement) {
+      pagePathInput.value = window.location.pathname;
+    }
+  };
+
+  const fillAllAttributionForms = () => {
+    document.querySelectorAll('form[data-lead-attribution-form="true"]').forEach(fillAttributionFields);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fillAllAttributionForms, { once: true });
+  } else {
+    fillAllAttributionForms();
+  }
+
+  document.addEventListener('submit', (event) => {
+    fillAttributionFields(event.target);
+  }, true);
+</script>

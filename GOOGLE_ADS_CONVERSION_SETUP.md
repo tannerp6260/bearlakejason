@@ -118,14 +118,12 @@ Once conversions are verified:
 
 1. Use this conversion action as a **Primary** conversion if form submissions are the main campaign goal.
 2. Optimize campaigns toward **Conversions** or **Maximize conversions** only after there is enough conversion volume for stable learning.
-3. Keep lower-intent actions, such as phone-link clicks or page views, as **Secondary** conversions unless you intentionally want bidding to optimize toward them.
+3. Keep lower-intent actions, such as phone, text, and email clicks, as **Secondary** conversions.
 4. Review search terms and lead quality regularly. A high conversion count is only useful if the form submissions are qualified Bear Lake real estate leads.
 
-## Optional future improvement — confirmed thank-you-page conversions
+## Secondary click conversions and optimization
 
-The current implementation records a conversion when the browser submits a valid contact form. That is the best fit for the current static form flow because the form posts directly to the form provider.
-
-If you later want conversions to count only after the form provider confirms receipt, configure the form provider to redirect successful submissions to a local thank-you page such as `/thank-you/`, then move the conversion event to that thank-you page. Google's web conversion setup documentation notes that URL-based conversion tracking is appropriate when a conversion is completed by landing on a specific confirmation page.
+Phone, text, and email clicks are supported as secondary Google Ads conversions. See `GOOGLE_ADS_OPTIMIZATION.md` for setup details, limited-budget campaign structure, attribution-field notes, and compliance guardrails.
 
 ## Official Google references
 

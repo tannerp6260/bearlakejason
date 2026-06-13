@@ -22,6 +22,9 @@ export const site = {
   formEndpoint: import.meta.env.PUBLIC_FORM_ENDPOINT || defaultFormEndpoint,
   googleAdsConversionId: import.meta.env.PUBLIC_GOOGLE_ADS_CONVERSION_ID || '',
   googleAdsContactConversionLabel: import.meta.env.PUBLIC_GOOGLE_ADS_CONTACT_CONVERSION_LABEL || '',
+  googleAdsPhoneClickConversionLabel: import.meta.env.PUBLIC_GOOGLE_ADS_PHONE_CLICK_CONVERSION_LABEL || '',
+  googleAdsSmsClickConversionLabel: import.meta.env.PUBLIC_GOOGLE_ADS_SMS_CLICK_CONVERSION_LABEL || '',
+  googleAdsEmailClickConversionLabel: import.meta.env.PUBLIC_GOOGLE_ADS_EMAIL_CLICK_CONVERSION_LABEL || '',
   socialImage: '/images/scenery/bearlake_sunset2.jpeg',
 };
 

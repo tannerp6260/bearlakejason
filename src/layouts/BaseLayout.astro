@@ -2,6 +2,7 @@
 import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
 import GoogleAdsTracking from '@/components/analytics/GoogleAdsTracking.astro';
+import LeadAttribution from '@/components/analytics/LeadAttribution.astro';
 import JsonLd from '@/components/seo/JsonLd.astro';
 import { site } from '@/data/site';
 import { withBasePath } from '@/utils/paths';
@@ -38,8 +39,9 @@ const imageUrl = new URL(withBasePath(image), site.domain).toString();
     <meta name="twitter:image" content={imageUrl} />
     <JsonLd />
     <GoogleAdsTracking />
+    <LeadAttribution />
   </head>
-  <body>
+  <body class="pb-24 sm:pb-0">
     <Header />
     <main>
       <slot />

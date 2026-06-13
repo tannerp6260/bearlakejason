@@ -2,6 +2,9 @@
 import { site } from '@/data/site';
 
 const googleAdsConversionId = site.googleAdsConversionId;
+const phoneClickConversionLabel = site.googleAdsPhoneClickConversionLabel;
+const smsClickConversionLabel = site.googleAdsSmsClickConversionLabel;
+const emailClickConversionLabel = site.googleAdsEmailClickConversionLabel;
 ---
 {googleAdsConversionId ? (
   <>
@@ -17,3 +20,46 @@ const googleAdsConversionId = site.googleAdsConversionId;
     </script>
   </>
 ) : null}
+
+<script is:inline define:vars={{ googleAdsConversionId, phoneClickConversionLabel, smsClickConversionLabel, emailClickConversionLabel }}>
+  const secondaryClickConversionLabels = {
+    tel: phoneClickConversionLabel,
+    sms: smsClickConversionLabel,
+    mailto: emailClickConversionLabel,
+  };
+
+  document.addEventListener('click', (event) => {
+    const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+    if (!(link instanceof HTMLAnchorElement)) return;
+
+    const href = link.getAttribute('href') || '';
+    const scheme = href.split(':', 1)[0];
+    const conversionLabel = secondaryClickConversionLabels[scheme];
+    const gtag = window.gtag;
+
+    if (!googleAdsConversionId || !conversionLabel || typeof gtag !== 'function') return;
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (link.dataset.googleAdsClickConversionPending === 'true') return;
+
+    event.preventDefault();
+    link.dataset.googleAdsClickConversionPending = 'true';
+
+    let navigated = false;
+    const continueNavigation = () => {
+      if (navigated) return;
+      navigated = true;
+      window.location.href = href;
+      window.setTimeout(() => {
+        delete link.dataset.googleAdsClickConversionPending;
+      }, 1000);
+    };
+
+    gtag('event', 'conversion', {
+      send_to: `${googleAdsConversionId}/${conversionLabel}`,
+      event_callback: continueNavigation,
+      event_timeout: 500,
+    });
+
+    window.setTimeout(continueNavigation, 650);
+  }, true);
+</script>
