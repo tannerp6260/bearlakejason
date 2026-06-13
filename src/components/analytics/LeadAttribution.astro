@@ -11,7 +11,9 @@
     'utm_term',
     'utm_content',
   ];
+  const contextKeys = ['landing_page', 'referrer'];
   const storagePrefix = 'bearlakejason_attribution_';
+  const memoryAttribution = new Map();
   const storage = (() => {
     try {
       const testKey = `${storagePrefix}test`;
@@ -24,11 +26,16 @@
   })();
 
   const setStoredValue = (key: string, value: string) => {
-    if (!storage || !value) return;
-    storage.setItem(`${storagePrefix}${key}`, value);
+    if (!value) return;
+    memoryAttribution.set(key, value);
+    storage?.setItem(`${storagePrefix}${key}`, value);
   };
 
-  const getStoredValue = (key: string) => storage?.getItem(`${storagePrefix}${key}`) || '';
+  const getStoredValue = (key: string) => {
+    const storedValue = storage?.getItem(`${storagePrefix}${key}`) || '';
+    return storedValue || memoryAttribution.get(key) || '';
+  };
+
   const params = new URLSearchParams(window.location.search);
 
   attributionKeys.forEach((key) => {
@@ -45,16 +52,16 @@
   }
 
   const fillAttributionFields = (form: EventTarget | Element | null) => {
-    if (!(form instanceof HTMLFormElement)) return;
+    if (!(form instanceof HTMLFormElement) || form.dataset.leadAttributionForm !== 'true') return;
 
-    [...attributionKeys, 'landing_page', 'referrer'].forEach((key) => {
-      const input = form.querySelector(`input[name="${key}"]`);
+    [...attributionKeys, ...contextKeys].forEach((key) => {
+      const input = form.querySelector(`input[type="hidden"][name="${key}"]`);
       if (input instanceof HTMLInputElement) {
         input.value = getStoredValue(key);
       }
     });
 
-    const pagePathInput = form.querySelector('input[name="page_path"]');
+    const pagePathInput = form.querySelector('input[type="hidden"][name="page_path"]');
     if (pagePathInput instanceof HTMLInputElement) {
       pagePathInput.value = window.location.pathname;
     }

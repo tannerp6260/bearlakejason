@@ -80,7 +80,7 @@ The contact forms include hidden fields for:
 - `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`
 - `landing_page`, `referrer`, `page_path`
 
-These fields are invisible to visitors and do not change the form appearance. They submit only campaign, referrer, and landing-page context with the lead form when those values are available. They do not collect IP addresses, browser fingerprints, precise device data, or hidden personal details.
+These fields are invisible to visitors and do not change the form appearance. A lightweight sitewide script reads `gclid`, `gbraid`, `wbraid`, and supported `utm_*` query parameters from the landing URL, stores available values in `sessionStorage` for the current browser session, records `landing_page`, `referrer`, and the current `page_path`, and fills matching hidden inputs only on forms marked with `data-lead-attribution-form="true"`. Fields remain blank when a value is unavailable. The implementation does not collect IP addresses, browser fingerprints, device profiles, or hidden personal details.
 
 ## Weekly search-term review checklist
 
